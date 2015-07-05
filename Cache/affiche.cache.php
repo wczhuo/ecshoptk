@@ -1,0 +1,246 @@
+<?php 
+$AfficheList=array (
+  0 => 
+  array (
+    'id' => '1',
+    'class_id' => '1',
+    'name' => 'wangchengzhuo',
+    'title' => 'wangchengzhuo',
+    'content' => 'wangchengzhuo',
+    'createtime' => '1',
+    'updatetime' => '1',
+    'substation' => '0',
+  ),
+  1 => 
+  array (
+    'id' => '2',
+    'class_id' => '1',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  2 => 
+  array (
+    'id' => '3',
+    'class_id' => '1',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  3 => 
+  array (
+    'id' => '4',
+    'class_id' => '1',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  4 => 
+  array (
+    'id' => '5',
+    'class_id' => '1',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  5 => 
+  array (
+    'id' => '6',
+    'class_id' => '1',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  6 => 
+  array (
+    'id' => '7',
+    'class_id' => '1',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  7 => 
+  array (
+    'id' => '8',
+    'class_id' => '3',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  8 => 
+  array (
+    'id' => '9',
+    'class_id' => '2',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  9 => 
+  array (
+    'id' => '10',
+    'class_id' => '1',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  10 => 
+  array (
+    'id' => '11',
+    'class_id' => '3',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  11 => 
+  array (
+    'id' => '12',
+    'class_id' => '2',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  12 => 
+  array (
+    'id' => '13',
+    'class_id' => '1',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  13 => 
+  array (
+    'id' => '14',
+    'class_id' => '3',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  14 => 
+  array (
+    'id' => '15',
+    'class_id' => '2',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  15 => 
+  array (
+    'id' => '16',
+    'class_id' => '1',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  16 => 
+  array (
+    'id' => '17',
+    'class_id' => '3',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  17 => 
+  array (
+    'id' => '18',
+    'class_id' => '2',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  18 => 
+  array (
+    'id' => '19',
+    'class_id' => '1',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  19 => 
+  array (
+    'id' => '20',
+    'class_id' => '3',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  20 => 
+  array (
+    'id' => '21',
+    'class_id' => '2',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+  21 => 
+  array (
+    'id' => '22',
+    'class_id' => '1',
+    'name' => 'wangchengzhuo',
+    'title' => NULL,
+    'content' => NULL,
+    'createtime' => NULL,
+    'updatetime' => NULL,
+    'substation' => NULL,
+  ),
+); 
+?>

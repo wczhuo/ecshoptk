@@ -1,0 +1,257 @@
+<?php 
+$AfficheClassList=array (
+  0 => 
+  array (
+    'id' => '1',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '0',
+  ),
+  1 => 
+  array (
+    'id' => '2',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类2',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '0',
+  ),
+  2 => 
+  array (
+    'id' => '3',
+    'parent_id' => '1',
+    'depth' => '2',
+    'path' => '/1/',
+    'name' => '二级分类/1/',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '0',
+  ),
+  3 => 
+  array (
+    'id' => '4',
+    'parent_id' => '1',
+    'depth' => '2',
+    'path' => '/1/',
+    'name' => '二级分类/1/',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '0',
+  ),
+  4 => 
+  array (
+    'id' => '5',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '',
+  ),
+  5 => 
+  array (
+    'id' => '6',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '',
+  ),
+  6 => 
+  array (
+    'id' => '7',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '',
+  ),
+  7 => 
+  array (
+    'id' => '8',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '',
+  ),
+  8 => 
+  array (
+    'id' => '9',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '',
+  ),
+  9 => 
+  array (
+    'id' => '10',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '',
+  ),
+  10 => 
+  array (
+    'id' => '11',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '',
+  ),
+  11 => 
+  array (
+    'id' => '12',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '',
+  ),
+  12 => 
+  array (
+    'id' => '13',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '',
+  ),
+  13 => 
+  array (
+    'id' => '14',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '',
+  ),
+  14 => 
+  array (
+    'id' => '15',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '',
+  ),
+  15 => 
+  array (
+    'id' => '16',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '',
+  ),
+  16 => 
+  array (
+    'id' => '17',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '',
+  ),
+  17 => 
+  array (
+    'id' => '18',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '',
+  ),
+  18 => 
+  array (
+    'id' => '19',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '',
+  ),
+  19 => 
+  array (
+    'id' => '20',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '',
+  ),
+  20 => 
+  array (
+    'id' => '21',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '',
+  ),
+  21 => 
+  array (
+    'id' => '22',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '',
+  ),
+  22 => 
+  array (
+    'id' => '23',
+    'parent_id' => '0',
+    'depth' => '1',
+    'path' => '/',
+    'name' => '一级分类1',
+    'createtime' => '0',
+    'updatetime' => '0',
+    'substation' => '',
+  ),
+); 
+?>
