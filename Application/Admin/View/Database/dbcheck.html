@@ -1,0 +1,103 @@
+﻿{XT:}include file="../header.html"{/XT}
+
+    <title>
+        管理中心 - 首页
+    </title>
+</head>
+
+<body style="margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; height:100%;">
+ 	<div id="cpcontainer" class="container">
+        <script type="text/JavaScript">
+            parent.document.title = 'Discuz! Board 管理中心 - 站长 - 数据库 - 校验';
+            if (parent.$('admincpnav')) parent.$('admincpnav').innerHTML = '站长&amp;nbsp;&amp;raquo;&amp;nbsp;数据库&amp;nbsp;&amp;raquo;&amp;nbsp;校验&amp;nbsp;&amp;nbsp;&lt;a target="main" title="添加到常用操作" href="admin.php?action=misc&amp;operation=custommenu&amp;do=add&amp;title=%E6%A0%A1%E9%AA%8C&amp;url=action%253Ddb%2526operation%253Ddbcheck"&gt;[+]&lt;/a&gt;';
+        </script>
+        <div class="floattop">
+            <div class="itemtitle">
+                <h3>
+                    数据库
+                </h3>
+                <ul class="tab1">
+                    <li>
+                        <a href="{XT:}U('Admin/Database/Index'){/XT}">
+                            <span>
+                                备份
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{XT:}U('Admin/Database/recovery'){/XT}">
+                            <span>
+                                恢复
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{XT:}U('Admin/Database/optimize'){/XT}">
+                            <span>
+                                优化
+                            </span>
+                        </a>
+                    </li>
+                    <li class="current">
+                        <a href="{XT:}U('Admin/Database/dbcheck'){/XT}">
+                            <span>
+                                校验
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="floattopempty">
+        </div>
+        <div class="itemtitle">
+            <ul style="margin-right:10px" class="tab1">
+            </ul>
+            <ul class="stepstat">
+                <li id="step1" class="current">
+                    1.确认开始
+                </li>
+                <li id="step2">
+                    2.开始校验
+                </li>
+                <li id="step3">
+                    3.校验结果
+                </li>
+            </ul>
+            <ul class="tab1">
+            </ul>
+        </div>
+        <h3>
+            Discuz! 提示
+        </h3>
+        <div class="infobox">
+            <br>
+            <h4 class="marginbot normal">
+                点击下面按钮开始进行数据库校验
+            </h4>
+            <br>
+            <p class="margintop">
+                <input type="submit" onClick="location.href='admin.php?action=db&amp;operation=dbcheck&amp;step=2'"
+                value="开始" name="submit" class="btn">
+            </p>
+        </div>
+    </div>
+    
+    <script>
+		$(function(){
+			//切换备份的类型
+			$('.backuptype').delegate('li','click',function(e){
+				$(this).siblings().removeClass('checked');
+				$(this).addClass('checked');
+				$(this).siblings().find('input[type=radio]').attr('checked',false);
+				$(this).find('input[type=radio]').attr('checked',true);
+				if($(this).index()>0){
+					$('#showtables').show();
+				}else{
+					$('#showtables').hide();
+				}
+			});
+		});
+    </script>
+    
+{XT:}include file="../footer.html"{/XT}

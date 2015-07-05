@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>前台首页</title>
+</head>
+
+<body>
+    <a target="_blank" href="{XT:}U('Home/Login/Index'){/XT}">主页</a>
+	<a target="_blank" href="{XT:}U('Admin/Index/Index'){/XT}">后台管理</a>
+    <a target="_blank" href="{XT:}U('Admin/Login/Index'){/XT}">后台登录</a>
+    <a target="_blank" href="{XT:}U('Football/Index/Index'){/XT}">足球模块</a>
+    <div>
+        <div>足球模块</div>
+        <a target="_blank" href="javascript:;">获取比赛</a>
+        <form action="{XT:}U('Football/Index/Get'){/XT}">
+            <input type="text" name="min" value="1" />
+            <input type="text" name="max" value="1000" />
+            <input type="submit" name="submit" value="提交" />
+        </form>
+    </div>
+</body>
+</html>

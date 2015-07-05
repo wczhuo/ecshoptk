@@ -1,0 +1,88 @@
+﻿{XT:}include file="../header.html"{/XT}
+
+        <title>
+            登录管理中心
+        </title>
+        <meta content="Comsenz Inc." name="Copyright">
+    </head>
+    
+    <body>
+        <script language="JavaScript">
+            if (self.parent.frames.length != 0) {
+                self.parent.location = document.location;
+            }
+        </script>
+        <table class="logintb">
+            <tbody>
+                <tr>
+                    <td class="login">
+                        <h1>
+                            Discuz! Administrator's Control Panel
+                        </h1>
+                        <p>
+                            Discuz! 是
+                            <a href="http://www.tencent.com/" target="_blank">
+                                腾讯
+                            </a>
+                            旗下
+                            <a href="http://www.comsenz.com/" target="_blank">
+                                Comsenz
+                            </a>
+                            公司推出的以社区为基础的专业建站平台，帮助网站实现一站式服务。
+                        </p>
+                    </td>
+                    <td>
+                        <form method="post" action="{XT:}U('Admin/Login/Save'){/XT}" target="PostReturnIframe" id="FormLogin" name="FormLogin">
+                            <input name="sid" value="C0J002" type="hidden">
+                            <input name="frames" value="yes" type="hidden">
+                            <p class="logintitle">
+                                用户名:
+                            </p>
+                            <p class="loginform">
+                                <input name="admin_username" tabindex="1" class="txt" autocomplete="off"
+                                type="text">
+                            </p>
+                            <p class="logintitle">
+                                密　码:
+                            </p>
+                            <p class="loginform">
+                                <input name="admin_password" tabindex="1" class="txt" autocomplete="off"
+                                type="password">
+                            </p>
+                            <p class="loginnofloat">
+                                <input name="submit" value="提交" tabindex="3" class="btn" type="submit">
+                            </p>
+                        </form>
+                        <script type="text/JavaScript">
+                            document.getElementById('FormLogin').admin_username.focus();
+                        </script>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="logintb">
+            <tbody>
+                <tr>
+                    <td colspan="2" class="footer">
+                        <div class="copyright">
+                            <p>
+                                Powered by
+                                <a href="http://www.discuz.net/" target="_blank">
+                                    Discuz!
+                                </a>
+                                X3.2
+                            </p>
+                            <p>
+                                © 2001-2013,
+                                <a href="http://www.comsenz.com/" target="_blank">
+                                    Comsenz
+                                </a>
+                                Inc.
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+{XT:}include file="../footer.html"{/XT}

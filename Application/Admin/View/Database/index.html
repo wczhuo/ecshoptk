@@ -1,0 +1,189 @@
+﻿{XT:}include file="../header.html"{/XT}
+
+    <title>
+        管理中心 - 首页
+    </title>
+</head>
+
+<body style="margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; height:100%;">
+    <div id="cpcontainer" class="container">
+        <script type="text/JavaScript">
+            parent.document.title = 'Discuz! Board 管理中心 - 站长 - 数据库 - 备份';
+            if (parent.$('admincpnav')) parent.$('admincpnav').innerHTML = '站长&amp;nbsp;&amp;raquo;&amp;nbsp;数据库&amp;nbsp;&amp;raquo;&amp;nbsp;备份&amp;nbsp;&amp;nbsp;&lt;a target="main" title="添加到常用操作" href="admin.php?action=misc&amp;operation=custommenu&amp;do=add&amp;title=%E5%A4%87%E4%BB%BD&amp;url=action%253Ddb%2526operation%253Dexport"&gt;[+]&lt;/a&gt;';
+        </script>
+        <div class="floattop">
+            <div class="itemtitle">
+                <h3>
+                    数据库
+                </h3>
+                <ul class="tab1">
+                    <li class="current">
+                        <a href="{XT:}U('Admin/Database/Index'){/XT}">
+                            <span>
+                                备份
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{XT:}U('Admin/Database/recovery'){/XT}">
+                            <span>
+                                恢复
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{XT:}U('Admin/Database/optimize'){/XT}">
+                            <span>
+                                优化
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{XT:}U('Admin/Database/dbcheck'){/XT}">
+                            <span>
+                                校验
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="floattopempty">
+        </div>
+        <table id="tips" class="tb tb2 ">
+            <tbody>
+                <tr>
+                    <th class="partition">
+                        技巧提示
+                    </th>
+                </tr>
+                <tr>
+                    <td s="1" class="tipsblock">
+                        <ul id="tipslis">
+                            <li>
+                                数据备份功能根据您的选择备份全部Discuz! 和 UCenter数据，导出的数据文件可用"数据恢复"功能或 phpMyAdmin 导入。
+                            </li>
+                            <li>
+                                全部备份均不包含模板文件和附件文件。模板、附件的备份只需通过 FTP 等下载 template/、data/attachment/ 目录即可，Discuz!
+                                不提供单独备份。
+                            </li>
+                            <li style="border: medium none; background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; display: none;"
+                            id="tips_more">
+                                <a onClick="var tiplis = $('tipslis').getElementsByTagName('li');for(var i = 0; i &lt; tiplis.length; i++){tiplis[i].style.display=''}$('tips_more').style.display='none';"
+                                href="###">
+                                    显示全部提示...
+                                </a>
+                            </li>
+                            <li style="">
+                                MySQL Dump 的速度比 Discuz! 分卷备份快很多，但需要服务器支持相关的 Shell 权限，同时由于 MySQL 本身的兼容性问题，通常进行备份和恢复的服务器应当具有相同或相近的版本号才能顺利进行。因此
+                                MySQL Dump 是有风险的：一旦进行备份或恢复操作的服务器其中之一禁止了 Shell，或由于版本兼容性问题导致导入失败，您将无法使用 MySQL
+                                Dump 备份或由备份数据恢复；Discuz! 分卷备份没有此限制。
+                            </li>
+                            <li style="">
+                                数据备份选项中的设置，仅供高级用户的特殊用途使用，当您尚未对数据库做全面细致的了解之前，请使用默认参数备份，否则将导致备份数据错误等严重问题。
+                            </li>
+                            <li style="">
+                                十六进制方式可以保证备份数据的完整性，但是备份文件会占用更多的空间。
+                            </li>
+                            <li style="">
+                                压缩备份文件可以让您的备份文件占用更小的空间。
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <form id="cpform" action="admin.php?action=db&amp;operation=export&amp;setup=1"
+        autocomplete="off" method="post" name="cpform">
+            <input type="hidden" value="e0712c8a" name="formhash">
+            <input type="hidden" value="" name="scrolltop" id="formscrolltop">
+            <input type="hidden" value="" name="anchor">
+            <table class="tb tb2 ">
+                <tbody>
+                    <tr onMouseOver="setfaq(this, 'faqee67')">
+                        <td s="1" class="td27" colspan="2">
+                            数据备份类型:
+                            <a style="display: none;" target="_blank" href="http://faq.comsenz.com?type=admin&amp;ver=X3.2&amp;action=db&amp;operation=export&amp;key=db_export_type"
+                            title="查看更多提示" class="faq" id="faqee67">
+                                &nbsp;&nbsp;&nbsp;
+                            </a>
+                        </td>
+                    </tr>
+                    <tr onMouseOver="setfaq(this, 'faqee67')" class="noborder">
+                        <td class="vtop rowform">
+                            <ul onMouseOver="altStyle(this);" class="nofloat backuptype">
+                                <li class="checked">
+                                    <input type="radio" checked="" value="discuz_uc" name="type" class="radio">
+                                    &nbsp;备份全部(表结构和数据)
+                                </li>
+                                <li class="">
+                                    <input type="radio" value="custom" name="type" class="radio">
+                                    &nbsp;自定义备份
+                                </li>
+                            </ul>
+                        </td>
+                        <td s="1" class="vtop tips2">
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody style="display:none;" id="showtables">
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="chkalltables" checked="checked" onClick="checkAll('prefix', this.form, 'customtables', 'chkall', true)"
+                            name="chkall" class="checkbox">
+                            <label for="chkalltables">
+                                全选 - Discuz! 和 UCenter 数据表
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <ul onMouseOver="altStyle(this);" class="dblist">
+                            	{XT:}foreach from=$tableNameList item=one{/XT}                                    
+                                <li class="checked">
+                                    <input type="checkbox" checked="checked" class="checkbox" value="{XT:}$one.name{/XT}"
+                                    name="TableNameList[]">
+                                    {XT:}$one.name{/XT}
+                                </li>
+                                {XT:}/foreach{/XT}
+                          	</ul>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td colspan="15">
+                            <div class="fixsel">
+                                <input type="submit" value="提交" title="按 Enter 键可随时提交您的修改" name="exportsubmit" id="submit_exportsubmit" class="btn">
+                            </div>
+                        </td>
+                    </tr>
+                    <script type="text/JavaScript">
+                        _attachEvent(document.documentElement, 'keydown',
+                        function(e) {
+                            entersubmit(e, 'exportsubmit');
+                        });
+                    </script>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    
+    <script>
+		$(function(){
+			//切换备份的类型
+			$('.backuptype').delegate('li','click',function(e){
+				$(this).siblings().removeClass('checked');
+				$(this).addClass('checked');
+				$(this).siblings().find('input[type=radio]').attr('checked',false);
+				$(this).find('input[type=radio]').attr('checked',true);
+				if($(this).index()>0){
+					$('#showtables').show();
+				}else{
+					$('#showtables').hide();
+				}
+			});
+		});
+    </script>
+    
+{XT:}include file="../footer.html"{/XT}

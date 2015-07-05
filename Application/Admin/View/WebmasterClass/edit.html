@@ -1,0 +1,1437 @@
+﻿{XT:}include file="../header.html"{/XT}
+
+    <title>
+        管理中心 - 首页
+    </title>
+</head>
+
+<body style="margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; height:100%;">
+	<div class="container" id="cpcontainer">
+        <script type="text/JavaScript">
+            parent.document.title = 'Discuz! Board 管理中心 - 站长 - 后台管理团队';
+            if (parent.$('admincpnav')) parent.$('admincpnav').innerHTML = '站长&nbsp;&raquo;&nbsp;后台管理团队&nbsp;&nbsp;<a target="main" title="添加到常用操作" href="admin.php?action=misc&operation=custommenu&do=add&title=%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E5%9B%A2%E9%98%9F&url=action%253Dfounder%2526operation%253Dperm%2526do%253Dgroup%2526id%253D1">[+]</a>';
+        </script>
+        <style>
+            .item{ float: left; width: 180px; line-height: 25px; margin-left: 5px;
+            border-right: 1px #deeffb dotted; } .vtop .right, .item .right{ padding:
+            0 10px; line-height: 22px; background: url('static/image/admincp/bg_repno.gif')
+            no-repeat -286px -145px; font-weight: normal;margin-right:10px; } .vtop
+            a:hover.right, .item a:hover.right { text-decoration:none; }
+        </style>
+        <script type="text/JavaScript">
+            function permcheckall(obj, perms, t) {
+                var t = !t ? 0 : t;
+                var checkboxs = $(perms).getElementsByTagName('INPUT');
+                for (var i = 0; i < checkboxs.length; i++) {
+                    var e = checkboxs[i];
+                    if (e.type == 'checkbox') {
+                        if (!t) {
+                            if (!e.disabled) {
+                                e.checked = obj.checked;
+                            }
+                        } else {
+                            if (obj != e) {
+                                e.style.visibility = obj.checked ? 'hidden': 'visible';
+                            }
+                        }
+                        e.parentNode.parentNode.className = e.checked ? 'item checked': 'item';
+                    }
+                }
+            }
+            function checkclk(obj) {
+                var obj = obj.parentNode.parentNode;
+                obj.className = obj.className == 'item' ? 'item checked': 'item';
+            }
+        </script>
+        <div class="floattop">
+            <div class="itemtitle">
+                <div id="cpgselect" class="right popupmenu_dropmenu" onmouseover="$('#cpgselect_menu').show();" onmouseout="$('#cpgselect_menu').hide();" style="background-color:red;">
+                    切换团队职务
+                    <em>
+                        &nbsp;&nbsp;
+                    </em>
+                    <div id="cpgselect_menu" class="popupmenu_popup" style="display:none" style="background-color:green;">
+                        <a href="###" onclick="location.href='admin.php?action=founder&amp;operation=perm&amp;do=group&amp;switch=yes&amp;id=1&amp;scrolltop='+document.documentElement.scrollTop"class="current">
+                            门户管理员
+                        </a>
+                        <a href="###" onclick="location.href='admin.php?action=founder&amp;operation=perm&amp;do=group&amp;switch=yes&amp;id=2&amp;scrolltop='+document.documentElement.scrollTop">
+                            论坛管理员
+                        </a>
+                        <a href="###" onclick="location.href='admin.php?action=founder&amp;operation=perm&amp;do=group&amp;switch=yes&amp;id=3&amp;scrolltop='+document.documentElement.scrollTop">
+                            群组管理员
+                        </a>
+                        <a href="###" onclick="location.href='admin.php?action=founder&amp;operation=perm&amp;do=group&amp;switch=yes&amp;id=4&amp;scrolltop='+document.documentElement.scrollTop">
+                            空间管理员
+                        </a>
+                        <a href="###" onclick="location.href='admin.php?action=founder&amp;operation=perm&amp;do=group&amp;switch=yes&amp;id=5&amp;scrolltop='+document.documentElement.scrollTop">
+                            用户管理员
+                        </a>
+                    </div>
+                </div>
+                <h3>
+                    编辑团队职务权限 - 门户管理员
+                </h3>
+                <ul class="tab1">
+                    <li>
+                        <a href="http://localhost/discuz/admin.php?action=">
+                            <span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="floattopempty">
+        </div>
+        <form name="cpform" method="post" autocomplete="off" action="admin.php?action=founder&amp;operation=perm&amp;do=group&amp;id=1"id="cpform">
+            <input name="formhash" value="333ae4bf" type="hidden">
+            <input id="formscrolltop" name="scrolltop" value="" type="hidden">
+            <input name="anchor" value="" type="hidden">
+            <table class="tb tb2 ">
+                <tbody>
+                    <tr>
+                        <th colspan="15" class="partition">
+                            基本权限
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="vtop" id="perms_setting">
+                            <div class="item checked">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=setting_0"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="_allowpost" class="checkbox" checked="checked"onclick="checkclk(this)" type="checkbox">
+                                    <span title="设置成员能修改设置的内容，否则只能浏览后台信息，不能设置。">
+                                        开启授权
+                                    </span>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="15" class="partition">
+                            <label>
+                                <input class="checkbox" onclick="permcheckall(this, 'perms_global')" type="checkbox">
+                                全局
+                            </label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="vtop" id="perms_global">
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_0"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_basic" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    站点信息
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_1"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_access" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    注册与访问控制
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_2"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_functions" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    站点功能
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_3"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_cachethread" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    性能优化
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_4"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_memory" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    内存优化
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_5"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_serveropti" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    服务器优化
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_6"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_seo" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    SEO设置
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_7"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="domain" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    域名设置
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_8"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_follow" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    广播设置
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_9"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="credits" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    积分策略
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_10"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_home" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    空间设置
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_11"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_permissions" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    用户权限
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_12"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_credits" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    积分设置
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_13"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_datetime" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    时间设置
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_14"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_attach" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    上传设置
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_15"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_imgwater" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    水印设置
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_16"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="misc_attachtype" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    附件类型尺寸
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_17"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_search" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    搜索设置
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_18"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="district" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    地区设置
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_19"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_ranklist" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    排行榜设置
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_20"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_mobile" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    手机版访问设置
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=global_21"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_antitheft" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    防采集设置
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="15" class="partition">
+                            <label>
+                                <input class="checkbox" onclick="permcheckall(this, 'perms_style')" type="checkbox">
+                                界面
+                            </label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="vtop" id="perms_style">
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=style_0"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="nav" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    导航设置
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=style_1"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_styles" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    界面设置
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=style_2"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="styles" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    风格管理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=style_4"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="smilies" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    表情管理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=style_5"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="click" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    表态动作
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=style_6"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="misc_stamp" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    主题鉴定
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=style_7"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_editor" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    编辑器设置
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=style_8"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="misc_bbcode" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    Discuz! 代码
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=style_9"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="misc_onlinelist" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    在线列表图标
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="15" class="partition">
+                            <label>
+                                <input class="checkbox" onclick="permcheckall(this, 'perms_topic')" type="checkbox">
+                                内容
+                            </label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="vtop" id="perms_topic">
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_0"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="moderate" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    内容审核
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_1"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="misc_censor" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    词语过滤
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_2"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="report" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    用户举报
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_3"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="tag" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    标签管理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_4"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="collection" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    淘帖管理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_6"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="threads" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    论坛主题管理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_7"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="prune" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    论坛批量删帖
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_8"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="attach" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    论坛附件管理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_11"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="threads_group" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    群组主题管理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_12"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="prune_group" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    群组批量删帖
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_13"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="attach_group" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    群组附件管理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_16"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="recyclebin" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    主题回收站
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_17"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="recyclebinpost" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    回帖回收站
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_18"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="threads_forumstick" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    版块/群组置顶
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_19"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="postcomment" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    帖子点评管理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_22"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="doing" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    记录管理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_23"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="blog" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    日志管理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_24"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="blogrecyclebin" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    日志回收站
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_25"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="feed" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    动态管理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_26"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="album" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    相册管理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_27"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="pic" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    图片管理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_28"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="comment" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    评论/留言管理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=topic_29"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="share" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    分享管理
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="15" class="partition">
+                            <label>
+                                <input class="checkbox" onclick="permcheckall(this, 'perms_user')" type="checkbox">
+                                用户
+                            </label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="vtop" id="perms_user">
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_0"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="members_search" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    用户管理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_1"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="members_group" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    用户所在用户组
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_2"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="members_access" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    用户权限
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_3"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="members_credit" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    用户积分
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_4"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="members_medal" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    用户勋章
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_5"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="members_repeat" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    用户马甲
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_6"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="members_clean" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    用户清理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_7"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="members_edit" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    用户编辑
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_8"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="members_add" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    添加用户
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_9"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="members_profile" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    用户栏目
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_10"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="members_stat" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    资料统计
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_11"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="members_newsletter" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    发送通知
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_12"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="members_newsletter_mobile" class="checkbox"onclick="checkclk(this)" type="checkbox">
+                                    发送手机通知
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_13"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="usertag" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    用户标签
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_14"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="members_ban" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    禁止用户
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_15"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="members_ipban" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    禁止 IP
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_16"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="members_reward" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    积分奖惩
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_17"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="moderate_members" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    审核用户
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_18"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="admingroup" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    管理组
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_19"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="usergroups" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    用户组
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_20"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="specialuser_follow" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    推荐关注
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_21"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="specialuser_defaultuser" class="checkbox"onclick="checkclk(this)" type="checkbox">
+                                    推荐好友
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_22"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="verify_verify" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    资料审核
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=user_23"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="verify" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    认证设置
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="15" class="partition">
+                            <label>
+                                <input class="checkbox" onclick="permcheckall(this, 'perms_portal')" type="checkbox">
+                                门户
+                            </label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="vtop" id="perms_portal">
+                            <div class="item checked">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=portal_0"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="portalcategory" class="checkbox" checked="checked"onclick="checkclk(this)" type="checkbox">
+                                    频道栏目
+                                </label>
+                            </div>
+                            <div class="item checked">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=portal_1"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="article" class="checkbox" checked="checked"onclick="checkclk(this)" type="checkbox">
+                                    文章管理
+                                </label>
+                            </div>
+                            <div class="item checked">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=portal_2"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="topic" class="checkbox" checked="checked"onclick="checkclk(this)" type="checkbox">
+                                    专题管理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=portal_3"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="makehtml" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    HTML管理
+                                </label>
+                            </div>
+                            <div class="item checked">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=portal_4"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="diytemplate" class="checkbox" checked="checked"onclick="checkclk(this)" type="checkbox">
+                                    页面管理
+                                </label>
+                            </div>
+                            <div class="item checked">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=portal_5"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="block" class="checkbox" checked="checked"onclick="checkclk(this)" type="checkbox">
+                                    模块管理
+                                </label>
+                            </div>
+                            <div class="item checked">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=portal_6"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="blockstyle" class="checkbox" checked="checked"onclick="checkclk(this)" type="checkbox">
+                                    模块模板
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=portal_7"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="blockxml" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    第三方模块
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=portal_8"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="portalpermission" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    权限列表
+                                </label>
+                            </div>
+                            <div class="item checked">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=portal_9"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="blogcategory" class="checkbox" checked="checked"onclick="checkclk(this)" type="checkbox">
+                                    日志分类
+                                </label>
+                            </div>
+                            <div class="item checked">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=portal_10"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="albumcategory" class="checkbox" checked="checked"onclick="checkclk(this)" type="checkbox">
+                                    相册分类
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="15" class="partition">
+                            <label>
+                                <input class="checkbox" onclick="permcheckall(this, 'perms_forum')" type="checkbox">
+                                论坛
+                            </label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="vtop" id="perms_forum">
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=forum_0"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="forums" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    版块管理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=forum_1"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="forums_merge" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    版块合并
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=forum_2"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="threadtypes" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    分类信息
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=forum_3"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="grid" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    首页四格
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="15" class="partition">
+                            <label>
+                                <input class="checkbox" onclick="permcheckall(this, 'perms_group')" type="checkbox">
+                                群组
+                            </label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="vtop" id="perms_group">
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=group_0"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="group_setting" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    群组设置
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=group_1"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="group_editgroup" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    编辑群组
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=group_2"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="group_deletegroup" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    删除群组
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=group_3"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="group_type" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    群组分类
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=group_4"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="group_manage" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    群组管理
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=group_5"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="group_userperm" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    群主权限
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=group_6"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="group_level" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    群组等级
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=group_7"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="group_mod" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    审核群组
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="15" class="partition">
+                            <label>
+                                <input class="checkbox" onclick="permcheckall(this, 'perms_safe')" type="checkbox">
+                                防灌水
+                            </label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="vtop" id="perms_safe">
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=safe_0"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_sec" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    基本设置
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=safe_1"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="cloud_security" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    防水墙
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=safe_2"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_seccheck" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    验证设置
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=safe_3"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="optimizer_security" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    安全大师
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=safe_4"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_accountguard" class="checkbox"onclick="checkclk(this)" type="checkbox">
+                                    帐号保镖
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="15" class="partition">
+                            <label>
+                                <input class="checkbox" onclick="permcheckall(this, 'perms_extended')"type="checkbox">
+                                运营
+                            </label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="vtop" id="perms_extended">
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=extended_0"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="announce" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    站点公告
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=extended_1"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="adv" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    站点广告
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=extended_2"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="tasks" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    站点任务
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=extended_3"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="magics" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    道具中心
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=extended_4"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="members_confermedal" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    颁发勋章
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=extended_5"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="medals" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    勋章中心
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=extended_6"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="faq" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    站点帮助
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=extended_7"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="ec_alipay" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    支付宝帐号
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=extended_8"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="ec_tenpay" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    财付通帐号
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=extended_9"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="ec_credit" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    诚信规则
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=extended_10"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="ec_orders" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    积分充值订单
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=extended_11"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="tradelog" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    商品交易订单
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=extended_12"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="setting_ec" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    电子商务
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=extended_13"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="misc_link" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    友情链接
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=extended_14"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="misc_focus" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    站长推荐
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=extended_15"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="misc_relatedlink" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    关联链接
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=extended_16"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="card" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    充值卡密
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="15" class="partition">
+                            <label>
+                                <input class="checkbox" onclick="permcheckall(this, 'perms_tools')" type="checkbox">
+                                工具
+                            </label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="vtop" id="perms_tools">
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=tools_0"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="tools_updatecache" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    更新缓存
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=tools_1"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="counter" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    更新统计
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=tools_2"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="logs" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    运行记录
+                                </label>
+                            </div>
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=tools_3"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="misc_cron" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    计划任务
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="15" class="partition">
+                            <label>
+                                <input class="checkbox" onclick="permcheckall(this, 'perms_cloud')" type="checkbox">
+                                云平台
+                            </label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="vtop" id="perms_cloud">
+                            <div class="item">
+                                <a class="right" title="设置" href="http://localhost/discuz/admin.php?frames=yes&amp;action=founder&amp;operation=perm&amp;do=gperm&amp;gset=cloud_0"target="_blank">
+                                    &nbsp;
+                                </a>
+                                <label class="txt">
+                                    <input name="permnew[]" value="cloud_doctor" class="checkbox" onclick="checkclk(this)"type="checkbox">
+                                    云平台诊断工具
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="15">
+                            <div class="fixsel">
+                                <input class="btn" id="submit_submit" name="submit" title="按 Enter 键可随时提交您的修改"value="提交" type="submit">
+                            </div>
+                        </td>
+                    </tr>
+                    <script type="text/JavaScript">
+                        _attachEvent(document.documentElement, 'keydown',
+                        function(e) {
+                            entersubmit(e, 'submit');
+                        });
+                    </script>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    
+	<script type="text/JavaScript">
+        var rowtypedata = [
+        [[1, '', 'td25'], [1, '<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<input name="newname[]" value="" size="15" type="text" class="txt">'], [1, '<input name="newurl[]" value="" size="15" type="text" class="txt">  <input type="hidden" name="newparentid[]" value="0" />'], [1, '<select name="newsubtype[]"><option value="0">内置</option><option value="1">外链</option></select>'], [1, '<input class="checkbox" type="checkbox" name="url_type" value="0" onChange="this.value=this.checked?\'0\':\'1\';">'], [1, '<input class="checkbox" type="checkbox" name="display" value="1" onChange="this.value=this.checked?\'1\':\'0\';">'], [1, '<a href="javascript:;" onclick="deleterow(this.parentNode.parentNode);" class="act">删除</a>']], 
+        [[1, '', 'td25'], [1, '<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<div class=\"board\"><input name="newname[]" value="" size="15" type="text" class="txt"></div>'], [1, '<input name="newurl[]" value="" size="15" type="text" class="txt">  <input type="hidden" name="newparentid[]" value="{1}" />'], [1, '<select name="newsubtype[]"><option value="0">内置</option><option value="1">外链</option></select>'], [1, '<input class="checkbox" type="checkbox" name="url_type" value="0" onChange="this.value=this.checked?\'0\':\'1\';">'], [1, '<input class="checkbox" type="checkbox" name="display" value="1" onChange="this.value=this.checked?\'1\':\'0\';">'], [1, '<a href="javascript:;" onclick="deleterow(this.parentNode.parentNode);" class="act">删除</a>']]];
+        function app(obj) {
+            var inputs = obj.parentNode.parentNode.getElementsByTagName('input');
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].name == 'newname[]') {
+                    inputs[i].value = obj.options[obj.options.selectedIndex].innerHTML;
+                } else if (inputs[i].name == 'newurl[]') {
+                    inputs[i].value = obj.value;
+                }
+            }
+        }
+		function checkFormNavigation(SourceForm) {
+			easyDialog.open({container : {content : '数据验证中...'}});
+			
+			easyDialog.open({container : {content : '正在保存数据...'}});
+			
+			return true;
+		}
+    </script>
+    
+{XT:}include file="../footer.html"{/XT}

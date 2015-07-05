@@ -1,0 +1,178 @@
+﻿{XT:}include file="../header.html"{/XT}
+
+    <title>
+        管理中心 - 首页
+    </title>
+</head>
+<body style="margin: 0px" scroll="no">
+    <div id="append_parent">
+    </div>
+    <table style="width: 100%;" id="frametable" width="100%" cellpadding="0" cellspacing="0" height="100%">
+        <tbody>
+            <tr>
+                <td colspan="2" height="90">
+                    <div class="mainhd">
+                        <a href="http://localhost/discuz/admin.php?frames=yes&amp;action=index" class="logo">
+                            Discuz! Administrator's Control Panel
+                        </a>
+                        <div class="uinfo" id="frameuinfo">
+                            <p>
+                                您好,
+                                <em>
+                                    admin
+                                </em>
+                                [
+                                <a href="{XT:}U('Admin/Index/logout'){/XT}" target="_top">
+                                    退出
+                                </a>
+                                ]
+                            </p>
+                            <p class="btnlink">
+                                <a href="{XT:}U('Home/Index/Index'){/XT}" target="_blank">
+                                    站点首页
+                                </a>
+                            </p>
+                        </div>
+                        <div class="navbg">
+                        </div>
+                        <div class="nav">
+                            <ul id="topmenu">
+                            	{XT:}foreach from=$NavigationList1 item=one key=key{/XT}
+                                <li style="visibility: visible;" {XT:}if $key==0{/XT}class="navon"{XT:}/if{/XT}>
+                                    <em>
+                                        <a target="main" href="{XT:}U($one.url_href){/XT}" id="header_index" hidefocus="true" key="index" url="{XT:}U('Admin/Main/Index'){/XT}">
+                                            {XT:}$one.name{/XT}
+                                        </a>
+                                    </em>
+                                </li>
+                                {XT:}/foreach{/XT}
+                            </ul>
+                            <div class="currentloca">
+                                <p id="admincpnav">
+                                    首页&nbsp;&nbsp;
+                                    <a target="main" title="添加到常用操作" href="http://localhost/discuz/admin.php?action=misc&amp;operation=custommenu&amp;do=add&amp;title=%E9%A6%96%E9%A1%B5&amp;url=action%253Dindex">
+                                        [+]
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="navbd">
+                            </div>
+                            <div class="sitemapbtn">
+                                <div style="float: left; margin:-7px 10px 0 0">
+                                    <form name="search" method="post" autocomplete="off" action="admin.php?action=search"
+                                          target="main">
+                                        <input name="keywords" class="txt" x-webkit-speech="" speech="" type="text" />
+                                        <input name="searchsubmit" value="yes" class="btn" type="hidden" />
+                                        <input name="searchsubmit" value="搜索" class="btn" style="margin-top: 5px;vertical-align:middle"
+                                               type="submit" />
+                                    </form>
+                                </div>
+                                <span id="add2custom" style="display: none">
+                                </span>
+                                <a href="javascript:;" id="cpmap" onClick="showMap();return false;">
+                                    <img src="{XT:}$config.sitedomain{/XT}/Public/Admin/Images/btn_map.gif" title="管理中心导航(ESC键)" width="46" height="18" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="menutd" valign="top" width="160">
+                    <div id="leftmenu" class="menu">
+                    	{XT:}foreach from=$NavigationList1 item=one key=key{/XT}                      
+                        <ul style="overflow: visible;{XT:}if $key>0{/XT}display: none;{XT:}/if{/XT}">
+                            {XT:}foreach from=$NavigationList2[$one.id] item=two{/XT}
+                            {XT:}if $NavigationList3[$two.id]|@count>0{/XT}
+                            <li class="s">
+                                <div class="lsub desc" subid="Ma5f625b2">
+                                    <div class="lsub_two">
+                                        {XT:}$two.name{/XT}
+                                    </div>
+                                    <ol style="display:" id="Ma5f625b2">
+                                    	{XT:}foreach from=$NavigationList3[$two.id] item=three{/XT}
+                                        <li>
+                                            <a href="{XT:}U($three.url_href){/XT}" hidefocus="true"
+                                               target="main">
+                                                <em onClick="menuNewwin(this)" title="新窗口打开">
+                                                </em>
+                                                {XT:}$three.name{/XT}
+                                            </a>
+                                        </li>
+                                        {XT:}/foreach{/XT}
+                                        <li class="sp">
+                                        </li>
+                                    </ol>
+                                </div>
+                            </li>
+                            {XT:}else{/XT}
+                            <li>
+                                <a href="{XT:}U($two.url_href){/XT}" hidefocus="true" target="main">
+                                    <em onClick="menuNewwin(this)" title="新窗口打开">
+                                    </em>
+                                    {XT:}$two.name{/XT}
+                                </a>
+                            </li>
+                            {XT:}/if{/XT}
+                            {XT:}/foreach{/XT}
+                        </ul>
+                        {XT:}/foreach{/XT}
+                    </div>
+                </td>
+                <td class="mask" valign="top" width="100%">
+                    <iframe src="{XT:}U('Admin/Main/Index'){/XT}" id="main" name="main" scrolling="yes" style="overflow: visible;display:" width="100%" frameborder="0" height="100%"></iframe>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="scrolllink" style="display: none">
+        <span onClick="menuScroll(1)">
+            <img src="{XT:}$config.sitedomain{/XT}/Public/Admin/Images/scrollu.gif" />
+        </span>
+        <span onClick="menuScroll(2)">
+            <img src="{XT:}$config.sitedomain{/XT}/Public/Admin/Images/scrolld.gif" />
+        </span>
+    </div>
+    <div class="copyright">
+        <p>
+            Powered by
+            <a href="http://www.discuz.net/" target="_blank">
+                Discuz!
+            </a>
+            X3.2
+        </p>
+        <p>
+            © 2001-2013,
+            <a href="http://www.comsenz.com/" target="_blank">
+                Comsenz Inc.
+            </a>
+        </p>
+    </div>
+    <script type="text/JavaScript">
+		$(function(){
+			$('#leftmenu ul li').delegate('a','click',function(e){
+				$(this).parent().siblings().find('a').removeClass('tabon');
+				$(this).addClass('tabon');
+			});
+			$('#leftmenu').delegate('.lsub_two','click',function(e){
+				$(this).next().toggle();
+				$(this).parent().toggleClass('desc');
+			});
+			$('#topmenu').delegate('li','click',function(e){
+				$(this).siblings().removeClass('navon');
+				$(this).addClass('navon');
+				$('#leftmenu ul').hide();
+				$('#leftmenu ul:eq('+$(this).index()+')').show();
+			});
+			$('#topmenu').delegate('li','mouseover',function(e){
+				$('#leftmenu ul').hide();
+				$('#leftmenu ul:eq('+$(this).index()+')').show();
+			});
+			$('#topmenu').delegate('li','mouseout',function(e){				
+				$('#leftmenu ul').hide();
+				$('#leftmenu ul:eq('+$('#topmenu .navon').index()+')').show();
+			});
+		});
+    </script>
+</body>
+</html>

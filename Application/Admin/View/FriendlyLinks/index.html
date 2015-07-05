@@ -1,0 +1,362 @@
+﻿{XT:}include file="../header.html"{/XT}
+
+    <title>
+        管理中心 - 首页
+    </title>
+</head>
+
+<body style="margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; height:100%;">
+	<div class="container" id="cpcontainer">
+        <script type="text/JavaScript">
+            var rowtypedata = [[[1, '', 'td25'], [1, '<input type="text" class="txt" name="newdisplayorder[]" size="3">', 'td28'], [1, '<input type="text" class="txt" name="newname[]" size="15">'], [1, '<input type="text" class="txt" name="newurl[]" size="20">'], [1, '<input type="text" class="txt" name="newdescription[]" size="30">', 'td26'], [1, '<input type="text" class="txt" name="newlogo[]" size="20">'], [1, '<input type="checkbox" name="newportal[{n}]" value="1" class="checkbox">'], [1, '<input type="checkbox" name="newforum[{n}]" value="1" class="checkbox">'], [1, '<input type="checkbox" name="newgroup[{n}]" value="1" class="checkbox">'], [1, '<input type="checkbox" name="newhome[{n}]" value="1" class="checkbox">']]]
+        </script>
+        <script type="text/JavaScript">
+            parent.document.title = 'Discuz! Board 管理中心 - 运营 - 友情链接';
+            if (parent.$('admincpnav')) parent.$('admincpnav').innerHTML = '运营&nbsp;&raquo;&nbsp;友情链接&nbsp;&nbsp;<a target="main" title="添加到常用操作" href="admin.php?action=misc&operation=custommenu&do=add&title=%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5&url=action%253Dmisc%2526operation%253Dlink">[+]</a>';
+        </script>
+        <div class="itemtitle">
+            <h3>
+                友情链接
+            </h3>
+        </div>
+        <table class="tb tb2 " id="tips">
+            <tbody>
+                <tr>
+                    <th class="partition">
+                        技巧提示
+                    </th>
+                </tr>
+                <tr>
+                    <td class="tipsblock" s="1">
+                        <ul id="tipslis">
+                            <li>
+                                如果您不想在论坛首页显示友情链接，可以在"
+                                <a href="http://localhost/discuz/admin.php?action=setting&amp;operation=styles&amp;anchor=index">
+                                    界面设置
+                                </a>
+                                "中关闭。
+                            </li>
+                            <li>
+                                未填写文字说明的项目将以紧凑型显示。
+                            </li>
+                            <li>
+                                友情链接分组只供 DIY 的展示类模块使用。
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <form name="cpform" method="post" autocomplete="off" action="admin.php?action=misc&amp;operation=link"id="cpform">
+            <input name="formhash" value="d7954c79" type="hidden">
+            <input id="formscrolltop" name="scrolltop" value="" type="hidden">
+            <input name="anchor" value="" type="hidden">
+            <table class="tb tb2 ">
+                <tbody>
+                    <tr class="header">
+                        <th>
+                        </th>
+                        <th>
+                            显示顺序
+                        </th>
+                        <th>
+                            站点名称
+                        </th>
+                        <th>
+                            站点 URL
+                        </th>
+                        <th>
+                            文字说明(可选)
+                        </th>
+                        <th>
+                            logo 地址(可选)
+                        </th>
+                        <th>
+                            分组1
+                        </th>
+                        <th>
+                            分组2
+                        </th>
+                        <th>
+                            分组3
+                        </th>
+                        <th>
+                            分组4
+                        </th>
+                    </tr>
+                    <tr class="header">
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                            <input class="checkbox" name="portalall" onclick="checkAll('prefix', this.form, 'portal', 'portalall')"type="checkbox">
+                        </th>
+                        <th>
+                            <input class="checkbox" name="forumall" onclick="checkAll('prefix', this.form, 'forum', 'forumall')"type="checkbox">
+                        </th>
+                        <th>
+                            <input class="checkbox" name="groupall" onclick="checkAll('prefix', this.form, 'group', 'groupall')"type="checkbox">
+                        </th>
+                        <th>
+                            <input class="checkbox" name="homeall" onclick="checkAll('prefix', this.form, 'home', 'homeall')"type="checkbox">
+                        </th>
+                    </tr>
+                    <tr class="hover">
+                        <td class="td25">
+                            <input class="checkbox" name="delete[]" value="1" type="checkbox">
+                        </td>
+                        <td class="td28">
+                            <input class="txt" name="displayorder[1]" value="0" size="3" type="text">
+                        </td>
+                        <td>
+                            <input class="txt" name="name[1]" value="官方论坛" size="15" type="text">
+                        </td>
+                        <td>
+                            <input class="txt" name="url[1]" value="http://www.discuz.net" size="20"type="text">
+                        </td>
+                        <td class="td26">
+                            <input class="txt" name="description[1]" value="提供最新 Discuz! 产品新闻、软件下载与技术交流"size="30" type="text">
+                        </td>
+                        <td>
+                            <input class="txt" name="logo[1]" value="static/image/common/logo_88_31.gif"size="20" type="text">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="portal[1]" type="checkbox">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="forum[1]" type="checkbox">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="group[1]" checked="checked" type="checkbox">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="home[1]" type="checkbox">
+                        </td>
+                    </tr>
+                    <tr class="hover">
+                        <td class="td25">
+                            <input class="checkbox" name="delete[]" value="5" type="checkbox">
+                        </td>
+                        <td class="td28">
+                            <input class="txt" name="displayorder[5]" value="1" size="3" type="text">
+                        </td>
+                        <td>
+                            <input class="txt" name="name[5]" value="Comsenz" size="15" type="text">
+                        </td>
+                        <td>
+                            <input class="txt" name="url[5]" value="http://www.comsenz.com" size="20"type="text">
+                        </td>
+                        <td class="td26">
+                            <input class="txt" name="description[5]" size="30" type="text">
+                        </td>
+                        <td>
+                            <input class="txt" name="logo[5]" size="20" type="text">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="portal[5]" type="checkbox">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="forum[5]" type="checkbox">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="group[5]" checked="checked" type="checkbox">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="home[5]" type="checkbox">
+                        </td>
+                    </tr>
+                    <tr class="hover">
+                        <td class="td25">
+                            <input class="checkbox" name="delete[]" value="3" type="checkbox">
+                        </td>
+                        <td class="td28">
+                            <input class="txt" name="displayorder[3]" value="2" size="3" type="text">
+                        </td>
+                        <td>
+                            <input class="txt" name="name[3]" value="漫游平台" size="15" type="text">
+                        </td>
+                        <td>
+                            <input class="txt" name="url[3]" value="http://www.manyou.com/" size="20"type="text">
+                        </td>
+                        <td class="td26">
+                            <input class="txt" name="description[3]" size="30" type="text">
+                        </td>
+                        <td>
+                            <input class="txt" name="logo[3]" size="20" type="text">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="portal[3]" type="checkbox">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="forum[3]" type="checkbox">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="group[3]" checked="checked" type="checkbox">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="home[3]" type="checkbox">
+                        </td>
+                    </tr>
+                    <tr class="hover">
+                        <td class="td25">
+                            <input class="checkbox" name="delete[]" value="4" type="checkbox">
+                        </td>
+                        <td class="td28">
+                            <input class="txt" name="displayorder[4]" value="3" size="3" type="text">
+                        </td>
+                        <td>
+                            <input class="txt" name="name[4]" value="Yeswan" size="15" type="text">
+                        </td>
+                        <td>
+                            <input class="txt" name="url[4]" value="http://www.yeswan.com" size="20"type="text">
+                        </td>
+                        <td class="td26">
+                            <input class="txt" name="description[4]" size="30" type="text">
+                        </td>
+                        <td>
+                            <input class="txt" name="logo[4]" size="20" type="text">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="portal[4]" type="checkbox">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="forum[4]" type="checkbox">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="group[4]" checked="checked" type="checkbox">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="home[4]" type="checkbox">
+                        </td>
+                    </tr>
+                    <tr class="hover">
+                        <td class="td25">
+                            <input class="checkbox" name="delete[]" value="2" type="checkbox">
+                        </td>
+                        <td class="td28">
+                            <input class="txt" name="displayorder[2]" value="4" size="3" type="text">
+                        </td>
+                        <td>
+                            <input class="txt" name="name[2]" value="专用主机" size="15" type="text">
+                        </td>
+                        <td>
+                            <input class="txt" name="url[2]" value="http://www.verydz.com/" size="20"type="text">
+                        </td>
+                        <td class="td26">
+                            <input class="txt" name="description[2]" size="30" type="text">
+                        </td>
+                        <td>
+                            <input class="txt" name="logo[2]" size="20" type="text">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="portal[2]" type="checkbox">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="forum[2]" type="checkbox">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="group[2]" checked="checked" type="checkbox">
+                        </td>
+                        <td>
+                            <input class="checkbox" value="1" name="home[2]" type="checkbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td25" colspan="1">
+                        </td>
+                        <td class="td28" colspan="1">
+                            <input class="txt" name="newdisplayorder[]" size="3" type="text">
+                        </td>
+                        <td colspan="1">
+                            <input class="txt" name="newname[]" size="15" type="text">
+                        </td>
+                        <td colspan="1">
+                            <input class="txt" name="newurl[]" size="20" type="text">
+                        </td>
+                        <td class="td26" colspan="1">
+                            <input class="txt" name="newdescription[]" size="30" type="text">
+                        </td>
+                        <td colspan="1">
+                            <input class="txt" name="newlogo[]" size="20" type="text">
+                        </td>
+                        <td colspan="1">
+                            <input name="newportal[0]" value="1" class="checkbox" type="checkbox">
+                        </td>
+                        <td colspan="1">
+                            <input name="newforum[0]" value="1" class="checkbox" type="checkbox">
+                        </td>
+                        <td colspan="1">
+                            <input name="newgroup[0]" value="1" class="checkbox" type="checkbox">
+                        </td>
+                        <td colspan="1">
+                            <input name="newhome[0]" value="1" class="checkbox" type="checkbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td colspan="3">
+                            <div>
+                                <a href="###" onclick="addrow(this, 0)" class="addtr">
+                                    添加友情链接
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td25">
+                            <input name="chkall" id="chkallm298" class="checkbox" onclick="checkAll('prefix', this.form, 'delete')"type="checkbox">
+                            <label for="chkallm298">
+                                删?
+                            </label>
+                        </td>
+                        <td colspan="15">
+                            <div class="fixsel">
+                                <input class="btn" id="submit_linksubmit" name="linksubmit" title="按 Enter 键可随时提交您的修改"value="提交" type="submit">
+                            </div>
+                        </td>
+                    </tr>
+                    <script type="text/JavaScript">
+                        _attachEvent(document.documentElement, 'keydown',
+                        function(e) {
+                            entersubmit(e, 'linksubmit');
+                        });
+                    </script>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    
+	<script type="text/JavaScript">
+        var rowtypedata = [
+        [[1, '', 'td25'], [1, '<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<input name="newname[]" value="" size="15" type="text" class="txt">'], [1, '<input name="newurl[]" value="" size="15" type="text" class="txt">  <input type="hidden" name="newparentid[]" value="0" />'], [1, '<select name="newsubtype[]"><option value="0">内置</option><option value="1">外链</option></select>'], [1, '<input class="checkbox" type="checkbox" name="url_type" value="0" onChange="this.value=this.checked?\'0\':\'1\';">'], [1, '<input class="checkbox" type="checkbox" name="display" value="1" onChange="this.value=this.checked?\'1\':\'0\';">'], [1, '<a href="javascript:;" onclick="deleterow(this.parentNode.parentNode);" class="act">删除</a>']], 
+        [[1, '', 'td25'], [1, '<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<div class=\"board\"><input name="newname[]" value="" size="15" type="text" class="txt"></div>'], [1, '<input name="newurl[]" value="" size="15" type="text" class="txt">  <input type="hidden" name="newparentid[]" value="{1}" />'], [1, '<select name="newsubtype[]"><option value="0">内置</option><option value="1">外链</option></select>'], [1, '<input class="checkbox" type="checkbox" name="url_type" value="0" onChange="this.value=this.checked?\'0\':\'1\';">'], [1, '<input class="checkbox" type="checkbox" name="display" value="1" onChange="this.value=this.checked?\'1\':\'0\';">'], [1, '<a href="javascript:;" onclick="deleterow(this.parentNode.parentNode);" class="act">删除</a>']]];
+        function app(obj) {
+            var inputs = obj.parentNode.parentNode.getElementsByTagName('input');
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].name == 'newname[]') {
+                    inputs[i].value = obj.options[obj.options.selectedIndex].innerHTML;
+                } else if (inputs[i].name == 'newurl[]') {
+                    inputs[i].value = obj.value;
+                }
+            }
+        }
+		function checkFormNavigation(SourceForm) {
+			easyDialog.open({container : {content : '数据验证中...'}});
+			
+			easyDialog.open({container : {content : '正在保存数据...'}});
+			
+			return true;
+		}
+    </script>
+    
+{XT:}include file="../footer.html"{/XT}

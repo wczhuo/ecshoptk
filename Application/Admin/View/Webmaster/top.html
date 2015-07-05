@@ -1,0 +1,23 @@
+﻿			<div class="floattop">
+                <div class="itemtitle">
+                    <h3>
+                        后台管理团队
+                    </h3>
+                    <ul class="tab1">
+                        <li {XT:}if $Think.CONTROLLER_NAME=='Webmaster'{/XT}class="current"{XT:}/if{/XT}>
+                            <a href="{XT:}U('Admin/Webmaster/Index'){/XT}">
+                                <span>
+                                    团队成员
+                                </span>
+                            </a>
+                        </li>
+                        <li {XT:}if $Think.CONTROLLER_NAME=='WebmasterClass'{/XT}class="current"{XT:}/if{/XT}>
+                            <a href="{XT:}U('Admin/WebmasterClass/Index'){/XT}">
+                                <span>
+                                    团队职务
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>

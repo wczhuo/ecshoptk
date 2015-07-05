@@ -1,0 +1,1091 @@
+﻿{XT:}include file="../header.html"{/XT}
+
+    <title>
+        管理中心 - 首页
+    </title>
+</head>
+
+<body style="margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; height:100%;">
+	<div class="container" id="cpcontainer">
+        <script type="text/JavaScript">
+            parent.document.title = 'Discuz! Board 管理中心 - 全局 - 地区设置';
+            if (parent.$('admincpnav')) parent.$('admincpnav').innerHTML = '全局&nbsp;&raquo;&nbsp;地区设置&nbsp;&nbsp;<a target="main" title="添加到常用操作" href="admin.php?action=misc&operation=custommenu&do=add&title=%E5%9C%B0%E5%8C%BA%E8%AE%BE%E7%BD%AE&url=action%253Ddistrict">[+]</a>';
+        </script>
+        <div class="itemtitle">
+            <h3>
+                地区设置
+            </h3>
+        </div>
+        <table class="tb tb2 " id="tips">
+            <tbody>
+                <tr>
+                    <th class="partition">
+                        技巧提示
+                    </th>
+                </tr>
+                <tr>
+                    <td class="tipsblock" s="1">
+                        <ul id="tipslis">
+                            <li>
+                                您可以自己编辑地区数据
+                            </li>
+                            <li>
+                                添加，编辑或删除操作后需要点击"提交"按钮才生效
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <form name="cpform" method="post" autocomplete="off" action="admin.php?action=district&amp;pid=&amp;cid=&amp;did="id="cpform">
+            <input name="formhash" value="2b1e9855" type="hidden">
+            <input id="formscrolltop" name="scrolltop" value="" type="hidden">
+            <input name="anchor" value="" type="hidden">
+            选择地区 &nbsp;
+            <select name="province" id="province" onchange="this.form.city.value='';this.form.district.value='';refreshdistrict('province', 'city', 'district')">
+                <option selected="selected" value="">
+                    -省份-
+                </option>
+                <option value="1">
+                    北京市
+                </option>
+                <option value="2">
+                    天津市
+                </option>
+                <option value="3">
+                    河北省
+                </option>
+                <option value="4">
+                    山西省
+                </option>
+                <option value="5">
+                    内蒙古自治区
+                </option>
+                <option value="6">
+                    辽宁省
+                </option>
+                <option value="7">
+                    吉林省
+                </option>
+                <option value="8">
+                    黑龙江省
+                </option>
+                <option value="9">
+                    上海市
+                </option>
+                <option value="10">
+                    江苏省
+                </option>
+                <option value="11">
+                    浙江省
+                </option>
+                <option value="12">
+                    安徽省
+                </option>
+                <option value="13">
+                    福建省
+                </option>
+                <option value="14">
+                    江西省
+                </option>
+                <option value="15">
+                    山东省
+                </option>
+                <option value="16">
+                    河南省
+                </option>
+                <option value="17">
+                    湖北省
+                </option>
+                <option value="18">
+                    湖南省
+                </option>
+                <option value="19">
+                    广东省
+                </option>
+                <option value="20">
+                    广西壮族自治区
+                </option>
+                <option value="21">
+                    海南省
+                </option>
+                <option value="22">
+                    重庆市
+                </option>
+                <option value="23">
+                    四川省
+                </option>
+                <option value="24">
+                    贵州省
+                </option>
+                <option value="25">
+                    云南省
+                </option>
+                <option value="26">
+                    西藏自治区
+                </option>
+                <option value="27">
+                    陕西省
+                </option>
+                <option value="28">
+                    甘肃省
+                </option>
+                <option value="29">
+                    青海省
+                </option>
+                <option value="30">
+                    宁夏回族自治区
+                </option>
+                <option value="31">
+                    新疆维吾尔自治区
+                </option>
+                <option value="32">
+                    台湾省
+                </option>
+                <option value="33">
+                    香港特别行政区
+                </option>
+                <option value="34">
+                    澳门特别行政区
+                </option>
+                <option value="35">
+                    海外
+                </option>
+                <option value="36">
+                    其他
+                </option>
+            </select>
+            &nbsp;&nbsp;
+            <select name="city" id="city" onchange="refreshdistrict('province', 'city', 'district')">
+                <option selected="selected" value="">
+                    -城市-
+                </option>
+            </select>
+            &nbsp;&nbsp;
+            <select name="district" id="district" onchange="refreshdistrict('province', 'city', 'district')">
+                <option selected="selected" value="">
+                    -州县-
+                </option>
+            </select>
+            &nbsp;&nbsp;
+            <table class="tb tb2 ">
+                <tbody>
+                    <tr class="header">
+                        <th>
+                        </th>
+                        <th>
+                            显示顺序
+                        </th>
+                        <th>
+                            名称
+                        </th>
+                        <th>
+                            <input name="birthcitychkall" onclick="checkAll('prefix', this.form, 'birthcity', 'birthcitychkall')"class="checkbox" type="checkbox">
+                            出生地
+                        </th>
+                        <th>
+                            <input name="residecitychkall" onclick="checkAll('prefix', this.form, 'residecity', 'residecitychkall')"class="checkbox" type="checkbox">
+                            居住地
+                        </th>
+                        <th>
+                            操作
+                        </th>
+                    </tr>
+                    <tr id="td_1" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_1" class="txt" name="displayorder[1]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_1">
+                                <input id="input_1" class="txt" name="district[1]" value="北京市" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[1]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[1]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(1);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_2" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_2" class="txt" name="displayorder[2]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_2">
+                                <input id="input_2" class="txt" name="district[2]" value="天津市" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[2]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[2]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(2);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_3" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_3" class="txt" name="displayorder[3]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_3">
+                                <input id="input_3" class="txt" name="district[3]" value="河北省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[3]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[3]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(3);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_4" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_4" class="txt" name="displayorder[4]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_4">
+                                <input id="input_4" class="txt" name="district[4]" value="山西省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[4]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[4]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(4);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_5" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_5" class="txt" name="displayorder[5]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_5">
+                                <input id="input_5" class="txt" name="district[5]" value="内蒙古自治区" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[5]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[5]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(5);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_6" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_6" class="txt" name="displayorder[6]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_6">
+                                <input id="input_6" class="txt" name="district[6]" value="辽宁省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[6]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[6]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(6);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_7" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_7" class="txt" name="displayorder[7]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_7">
+                                <input id="input_7" class="txt" name="district[7]" value="吉林省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[7]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[7]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(7);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_8" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_8" class="txt" name="displayorder[8]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_8">
+                                <input id="input_8" class="txt" name="district[8]" value="黑龙江省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[8]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[8]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(8);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_9" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_9" class="txt" name="displayorder[9]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_9">
+                                <input id="input_9" class="txt" name="district[9]" value="上海市" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[9]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[9]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(9);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_10" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_10" class="txt" name="displayorder[10]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_10">
+                                <input id="input_10" class="txt" name="district[10]" value="江苏省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[10]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[10]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(10);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_11" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_11" class="txt" name="displayorder[11]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_11">
+                                <input id="input_11" class="txt" name="district[11]" value="浙江省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[11]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[11]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(11);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_12" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_12" class="txt" name="displayorder[12]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_12">
+                                <input id="input_12" class="txt" name="district[12]" value="安徽省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[12]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[12]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(12);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_13" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_13" class="txt" name="displayorder[13]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_13">
+                                <input id="input_13" class="txt" name="district[13]" value="福建省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[13]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[13]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(13);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_14" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_14" class="txt" name="displayorder[14]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_14">
+                                <input id="input_14" class="txt" name="district[14]" value="江西省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[14]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[14]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(14);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_15" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_15" class="txt" name="displayorder[15]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_15">
+                                <input id="input_15" class="txt" name="district[15]" value="山东省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[15]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[15]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(15);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_16" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_16" class="txt" name="displayorder[16]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_16">
+                                <input id="input_16" class="txt" name="district[16]" value="河南省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[16]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[16]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(16);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_17" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_17" class="txt" name="displayorder[17]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_17">
+                                <input id="input_17" class="txt" name="district[17]" value="湖北省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[17]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[17]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(17);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_18" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_18" class="txt" name="displayorder[18]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_18">
+                                <input id="input_18" class="txt" name="district[18]" value="湖南省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[18]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[18]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(18);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_19" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_19" class="txt" name="displayorder[19]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_19">
+                                <input id="input_19" class="txt" name="district[19]" value="广东省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[19]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[19]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(19);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_20" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_20" class="txt" name="displayorder[20]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_20">
+                                <input id="input_20" class="txt" name="district[20]" value="广西壮族自治区" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[20]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[20]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(20);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_21" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_21" class="txt" name="displayorder[21]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_21">
+                                <input id="input_21" class="txt" name="district[21]" value="海南省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[21]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[21]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(21);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_22" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_22" class="txt" name="displayorder[22]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_22">
+                                <input id="input_22" class="txt" name="district[22]" value="重庆市" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[22]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[22]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(22);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_23" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_23" class="txt" name="displayorder[23]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_23">
+                                <input id="input_23" class="txt" name="district[23]" value="四川省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[23]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[23]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(23);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_24" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_24" class="txt" name="displayorder[24]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_24">
+                                <input id="input_24" class="txt" name="district[24]" value="贵州省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[24]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[24]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(24);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_25" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_25" class="txt" name="displayorder[25]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_25">
+                                <input id="input_25" class="txt" name="district[25]" value="云南省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[25]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[25]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(25);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_26" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_26" class="txt" name="displayorder[26]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_26">
+                                <input id="input_26" class="txt" name="district[26]" value="西藏自治区" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[26]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[26]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(26);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_27" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_27" class="txt" name="displayorder[27]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_27">
+                                <input id="input_27" class="txt" name="district[27]" value="陕西省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[27]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[27]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(27);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_28" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_28" class="txt" name="displayorder[28]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_28">
+                                <input id="input_28" class="txt" name="district[28]" value="甘肃省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[28]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[28]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(28);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_29" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_29" class="txt" name="displayorder[29]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_29">
+                                <input id="input_29" class="txt" name="district[29]" value="青海省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[29]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[29]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(29);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_30" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_30" class="txt" name="displayorder[30]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_30">
+                                <input id="input_30" class="txt" name="district[30]" value="宁夏回族自治区" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[30]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[30]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(30);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_31" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_31" class="txt" name="displayorder[31]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_31">
+                                <input id="input_31" class="txt" name="district[31]" value="新疆维吾尔自治区"type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[31]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[31]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(31);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_32" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_32" class="txt" name="displayorder[32]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_32">
+                                <input id="input_32" class="txt" name="district[32]" value="台湾省" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[32]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[32]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(32);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_33" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_33" class="txt" name="displayorder[33]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_33">
+                                <input id="input_33" class="txt" name="district[33]" value="香港特别行政区" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[33]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[33]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(33);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_34" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_34" class="txt" name="displayorder[34]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_34">
+                                <input id="input_34" class="txt" name="district[34]" value="澳门特别行政区" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[34]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[34]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(34);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_35" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_35" class="txt" name="displayorder[35]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_35">
+                                <input id="input_35" class="txt" name="district[35]" value="海外" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[35]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[35]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(35);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr id="td_36" class="hover">
+                        <td>
+                        </td>
+                        <td class="td25">
+                            <input id="displayorder_36" class="txt" name="displayorder[36]" value="0"type="text">
+                        </td>
+                        <td>
+                            <p id="p_36">
+                                <input id="input_36" class="txt" name="district[36]" value="其他" type="text">
+                            </p>
+                        </td>
+                        <td>
+                            <input name="birthcity[36]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <input name="residecity[36]" value="1" class="checkbox" checked="checked"type="checkbox">
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="deletedistrict(36);return false;">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div>
+                                <a href="javascript:;" onclick="addrow(this, 0, 1);return false;" class="addtr">
+                                    添加
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="15">
+                            <div class="fixsel">
+                                <input class="btn" id="submit_editsubmit" name="editsubmit" title="按 Enter 键可随时提交您的修改"value="提交" type="submit">
+                            </div>
+                        </td>
+                    </tr>
+                    <script type="text/JavaScript">
+                        _attachEvent(document.documentElement, 'keydown',
+                        function(e) {
+                            entersubmit(e, 'editsubmit');
+                        });
+                    </script>
+                    <script type="text/javascript">
+                        var rowtypedata = [[[1, '', ''], [1, '<input type="text" class="txt" name="districtnew_order[]" value="0" />', 'td25'], [2, '<input type="text" class="txt" name="districtnew[]" value="" />', '']], ];
+    
+                        function refreshdistrict(province, city, district) {
+                            location.href = "admin.php?action=district" + "&province=" + province + "&city=" + city + "&district=" + district + "&pid=" + $(province).value + "&cid=" + $(city).value + "&did=" + $(district).value;
+                        }
+    
+                        function editdistrict(did) {
+                            $('input_' + did).style.display = "block";
+                            $('span_' + did).style.display = "none";
+                        }
+    
+                        function deletedistrict(did) {
+                            var elem = $('p_' + did);
+                            elem.parentNode.removeChild(elem);
+                            var elem = $('td_' + did);
+                            elem.parentNode.removeChild(elem);
+                        }
+                    </script>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    
+	<script type="text/JavaScript">
+        var rowtypedata = [
+        [[1, '', 'td25'], [1, '<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<input name="newname[]" value="" size="15" type="text" class="txt">'], [1, '<input name="newurl[]" value="" size="15" type="text" class="txt">  <input type="hidden" name="newparentid[]" value="0" />'], [1, '<select name="newsubtype[]"><option value="0">内置</option><option value="1">外链</option></select>'], [1, '<input class="checkbox" type="checkbox" name="url_type" value="0" onChange="this.value=this.checked?\'0\':\'1\';">'], [1, '<input class="checkbox" type="checkbox" name="display" value="1" onChange="this.value=this.checked?\'1\':\'0\';">'], [1, '<a href="javascript:;" onclick="deleterow(this.parentNode.parentNode);" class="act">删除</a>']], 
+        [[1, '', 'td25'], [1, '<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<div class=\"board\"><input name="newname[]" value="" size="15" type="text" class="txt"></div>'], [1, '<input name="newurl[]" value="" size="15" type="text" class="txt">  <input type="hidden" name="newparentid[]" value="{1}" />'], [1, '<select name="newsubtype[]"><option value="0">内置</option><option value="1">外链</option></select>'], [1, '<input class="checkbox" type="checkbox" name="url_type" value="0" onChange="this.value=this.checked?\'0\':\'1\';">'], [1, '<input class="checkbox" type="checkbox" name="display" value="1" onChange="this.value=this.checked?\'1\':\'0\';">'], [1, '<a href="javascript:;" onclick="deleterow(this.parentNode.parentNode);" class="act">删除</a>']]];
+        function app(obj) {
+            var inputs = obj.parentNode.parentNode.getElementsByTagName('input');
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].name == 'newname[]') {
+                    inputs[i].value = obj.options[obj.options.selectedIndex].innerHTML;
+                } else if (inputs[i].name == 'newurl[]') {
+                    inputs[i].value = obj.value;
+                }
+            }
+        }
+		function checkFormNavigation(SourceForm) {
+			easyDialog.open({container : {content : '数据验证中...'}});
+			
+			easyDialog.open({container : {content : '正在保存数据...'}});
+			
+			return true;
+		}
+    </script>
+    
+{XT:}include file="../footer.html"{/XT}

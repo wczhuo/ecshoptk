@@ -1,0 +1,224 @@
+﻿{XT:}include file="../header.html"{/XT}
+
+    <title>
+        管理中心 - 首页
+    </title>
+</head>
+
+<body style="margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; height:100%;">
+	<div id="cpcontainer" class="container">
+        <script type="text/JavaScript">
+            parent.document.title = 'Discuz! Board 管理中心 - 站长 - 数据库 - 优化';
+            if (parent.$('admincpnav')) parent.$('admincpnav').innerHTML = '站长&amp;nbsp;&amp;raquo;&amp;nbsp;数据库&amp;nbsp;&amp;raquo;&amp;nbsp;优化&amp;nbsp;&amp;nbsp;&lt;a target="main" title="添加到常用操作" href="admin.php?action=misc&amp;operation=custommenu&amp;do=add&amp;title=%E4%BC%98%E5%8C%96&amp;url=action%253Ddb%2526operation%253Doptimize"&gt;[+]&lt;/a&gt;';
+        </script>
+        <div class="floattop">
+            <div class="itemtitle">
+                <h3>
+                    数据库
+                </h3>
+                <ul class="tab1">
+                    <li>
+                        <a href="{XT:}U('Admin/Database/Index'){/XT}">
+                            <span>
+                                备份
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{XT:}U('Admin/Database/recovery'){/XT}">
+                            <span>
+                                恢复
+                            </span>
+                        </a>
+                    </li>
+                    <li class="current">
+                        <a href="{XT:}U('Admin/Database/optimize'){/XT}">
+                            <span>
+                                优化
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{XT:}U('Admin/Database/dbcheck'){/XT}">
+                            <span>
+                                校验
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="floattopempty">
+        </div>
+        <table id="tips" class="tb tb2 ">
+            <tbody>
+                <tr>
+                    <th class="partition">
+                        技巧提示
+                    </th>
+                </tr>
+                <tr>
+                    <td s="1" class="tipsblock">
+                        <ul id="tipslis">
+                            <li>
+                                数据表优化可以去除数据文件中的碎片，使记录排列紧密，提高读写速度。
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <form id="cpform" action="admin.php?action=db&amp;operation=optimize"
+        autocomplete="off" method="post" name="cpform">
+            <input type="hidden" value="e0712c8a" name="formhash">
+            <input type="hidden" value="" name="scrolltop" id="formscrolltop">
+            <input type="hidden" value="" name="anchor">
+            <table class="tb tb2 ">
+                <tbody>
+                    <tr>
+                        <th class="partition" colspan="15">
+                            待优化数据表列表
+                        </th>
+                    </tr>
+                    <tr class="header">
+                        <th>
+                        </th>
+                        <th>
+                            数据表
+                        </th>
+                        <th>
+                            类型
+                        </th>
+                        <th>
+                            记录数
+                        </th>
+                        <th>
+                            数据
+                        </th>
+                        <th>
+                            索引
+                        </th>
+                        <th>
+                            碎片
+                        </th>
+                    </tr>
+                    <tr class="hover">
+                        <td>
+                            <input type="checkbox" checked="" value="pre_common_statuser" name="optimizetables[]"
+                            class="checkbox">
+                        </td>
+                        <td>
+                            pre_common_statuser
+                        </td>
+                        <td>
+                            MyISAM
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            136
+                        </td>
+                        <td>
+                            2048
+                        </td>
+                        <td>
+                            68
+                        </td>
+                    </tr>
+                    <tr class="hover">
+                        <td>
+                            <input type="checkbox" checked="" value="pre_common_syscache" name="optimizetables[]"
+                            class="checkbox">
+                        </td>
+                        <td>
+                            pre_common_syscache
+                        </td>
+                        <td>
+                            MyISAM
+                        </td>
+                        <td>
+                            100
+                        </td>
+                        <td>
+                            379228
+                        </td>
+                        <td>
+                            5120
+                        </td>
+                        <td>
+                            40616
+                        </td>
+                    </tr>
+                    <tr class="hover">
+                        <td>
+                            <input type="checkbox" checked="" value="pre_ucenter_failedlogins" name="optimizetables[]"
+                            class="checkbox">
+                        </td>
+                        <td>
+                            pre_ucenter_failedlogins
+                        </td>
+                        <td>
+                            MyISAM
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            153
+                        </td>
+                        <td>
+                            2048
+                        </td>
+                        <td>
+                            51
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">
+                            尺寸 379.62 KB
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="15">
+                            <div class="fixsel">
+                                <input type="checkbox" checked="checked" onClick="checkAll('prefix', this.form)"
+                                class="checkbox" id="chkall" name="chkall">
+                                <label for="chkall">
+                                    优化?
+                                </label>
+                                &nbsp;
+                                <input type="submit" value="提交" title="按 Enter 键可随时提交您的修改" name="optimizesubmit"
+                                id="submit_optimizesubmit" class="btn">
+                            </div>
+                        </td>
+                    </tr>
+                    <script type="text/JavaScript">
+                        _attachEvent(document.documentElement, 'keydown',
+                        function(e) {
+                            entersubmit(e, 'optimizesubmit');
+                        });
+                    </script>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    
+    <script>
+		$(function(){
+			//切换备份的类型
+			$('.backuptype').delegate('li','click',function(e){
+				$(this).siblings().removeClass('checked');
+				$(this).addClass('checked');
+				$(this).siblings().find('input[type=radio]').attr('checked',false);
+				$(this).find('input[type=radio]').attr('checked',true);
+				if($(this).index()>0){
+					$('#showtables').show();
+				}else{
+					$('#showtables').hide();
+				}
+			});
+		});
+    </script>
+    
+{XT:}include file="../footer.html"{/XT}

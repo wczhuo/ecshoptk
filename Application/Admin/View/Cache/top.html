@@ -1,0 +1,38 @@
+﻿
+        <div class="floattop">
+            <div class="itemtitle">
+                <h3>
+                    导航设置
+                </h3>
+                <ul class="tab1">
+                    <li {XT:}if $smarty.get.type==0{/XT}class="current"{XT:}/if{/XT}>
+                        <a href="{XT:}U('Admin/Cache/Table'){/XT}">
+                            <span>
+                                数据库表结构
+                            </span>
+                        </a>
+                    </li>
+                    <li {XT:}if $smarty.get.type==1{/XT}class="current"{XT:}/if{/XT}>
+                        <a href="{XT:}U('Admin/Cache/City'){/XT}">
+                            <span>
+                                城市
+                            </span>
+                        </a>
+                    </li>
+                    <li {XT:}if $smarty.get.type==2{/XT}class="current"{XT:}/if{/XT}>
+                        <a href="{XT:}U('Admin/Cache/Basic'){/XT}">
+                            <span>
+                                基础数据
+                            </span>
+                        </a>
+                    </li>
+                    <li {XT:}if $smarty.get.type==2{/XT}class="current"{XT:}/if{/XT}>
+                        <a href="{XT:}U('Admin/Cache/Spell'){/XT}">
+                            <span>
+                                汉字拼音
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>

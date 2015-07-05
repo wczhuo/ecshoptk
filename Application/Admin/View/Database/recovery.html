@@ -1,0 +1,300 @@
+﻿{XT:}include file="../header.html"{/XT}
+
+    <title>
+        管理中心 - 首页
+    </title>
+</head>
+
+<body style="margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; height:100%;">
+	<div id="cpcontainer" class="container">
+        <script type="text/JavaScript">
+            parent.document.title = 'Discuz! Board 管理中心 - 站长 - 数据库 - 恢复';
+            if (parent.$('admincpnav')) parent.$('admincpnav').innerHTML = '站长&amp;nbsp;&amp;raquo;&amp;nbsp;数据库&amp;nbsp;&amp;raquo;&amp;nbsp;恢复&amp;nbsp;&amp;nbsp;&lt;a target="main" title="添加到常用操作" href="admin.php?action=misc&amp;operation=custommenu&amp;do=add&amp;title=%E6%81%A2%E5%A4%8D&amp;url=action%253Ddb%2526operation%253Dimport"&gt;[+]&lt;/a&gt;';
+        </script>
+        <div class="floattop">
+            <div class="itemtitle">
+                <h3>
+                    数据库
+                </h3>
+                <ul class="tab1">
+                    <li>
+                        <a href="{XT:}U('Admin/Database/Index'){/XT}">
+                            <span>
+                                备份
+                            </span>
+                        </a>
+                    </li>
+                    <li class="current">
+                        <a href="{XT:}U('Admin/Database/recovery'){/XT}">
+                            <span>
+                                恢复
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{XT:}U('Admin/Database/optimize'){/XT}">
+                            <span>
+                                优化
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{XT:}U('Admin/Database/dbcheck'){/XT}">
+                            <span>
+                                校验
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="floattopempty">
+        </div>
+        <table id="tips" class="tb tb2 ">
+            <tbody>
+                <tr>
+                    <th class="partition">
+                        技巧提示
+                    </th>
+                </tr>
+                <tr>
+                    <td s="1" class="tipsblock">
+                        <ul id="tipslis">
+                            <li>
+                                本功能在恢复备份数据的同时，将全部覆盖原有数据，请确定恢复前已将论坛关闭，恢复全部完成后可以将论坛重新开放。
+                            </li>
+                            <li>
+                                恢复数据前请在 Discuz! X2.5 安装文件目录下utility文件夹内找到 restore.php 文件，然后将 restore.php
+                                文件上传到程序文件夹data目录下。
+                                <b>
+                                    为了您站点的安全，成功恢复数据后请务必及时删除 restore.php 文件。
+                                </b>
+                            </li>
+                            <li>
+                                您可以在数据备份记录处查看站点的备份文件的详细信息，删除过期的备份,并导入需要的备份。
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="tb tb2 ">
+            <tbody>
+                <tr>
+                    <th class="partition" colspan="15">
+                        数据恢复
+                    </th>
+                </tr>
+                <tr>
+                    <td class="tipsblock" colspan="9">
+                        <ul>
+                            <li>
+                                您可以在本页面数据备份记录处导入备份恢复数据，也可以通过在浏览器中执行
+                                <a target="_blank" href="http://localhost/discuz/data/restore.php">
+                                    http://localhost/discuz/data/restore.php
+                                </a>
+                                恢复数据
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <form id="cpform" action="admin.php?action=db&amp;operation=import" autocomplete="off"
+                method="post" name="cpform">
+                </form>
+                <input type="hidden" value="e0712c8a" name="formhash">
+                <input type="hidden" value="" name="scrolltop" id="formscrolltop">
+                <input type="hidden" value="" name="anchor">
+                <tr>
+                    <th class="partition" colspan="15">
+                        数据备份记录
+                    </th>
+                </tr>
+                <tr class="header">
+                    <th>
+                    </th>
+                    <th>
+                        文件名
+                    </th>
+                    <th>
+                        版本
+                    </th>
+                    <th>
+                        时间
+                    </th>
+                    <th>
+                        类型
+                    </th>
+                    <th>
+                        尺寸
+                    </th>
+                    <th>
+                        方式
+                    </th>
+                    <th>
+                        卷数
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+                <tr class="hover">
+                    <td>
+                        <input type="checkbox" value="150131_EhwhGs5s" name="delete[]" class="checkbox">
+                    </td>
+                    <td>
+                        <a onClick="display('exportlog_150131_EhwhGs5s')" href="javascript:;">
+                            150131_EhwhGs5s
+                        </a>
+                    </td>
+                    <td>
+                        X3.2
+                    </td>
+                    <td>
+                        2015-1-31 09:02
+                    </td>
+                    <td>
+                        Discuz! 和 UCenter 数据
+                    </td>
+                    <td>
+                        4.47 MB
+                    </td>
+                    <td>
+                        多卷
+                    </td>
+                    <td>
+                        3
+                    </td>
+                    <td>
+                        <a target="_blank" onClick="return confirm('您确定导入该备份吗？');" href="http://localhost/discuz/data/restore.php?operation=import&amp;from=server&amp;datafile_server=../data/backup_63f98d/150131_EhwhGs5s-1.sql&amp;importsubmit=yes"
+                        class="act">
+                            导入
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody style="display:none" id="exportlog_150131_EhwhGs5s">
+                <tr class="hover">
+                    <td>
+                    </td>
+                    <td>
+                        <a href="./data/backup_63f98d/150131_EhwhGs5s-1.sql">
+                            150131_EhwhGs5s-1.sql
+                        </a>
+                    </td>
+                    <td>
+                        X3.2
+                    </td>
+                    <td>
+                        2015-1-31 09:02
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        1.95 MB
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        1
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr class="hover">
+                    <td>
+                    </td>
+                    <td>
+                        <a href="./data/backup_63f98d/150131_EhwhGs5s-2.sql">
+                            150131_EhwhGs5s-2.sql
+                        </a>
+                    </td>
+                    <td>
+                        X3.2
+                    </td>
+                    <td>
+                        2015-1-31 09:03
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        1.95 MB
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        2
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr class="hover">
+                    <td>
+                    </td>
+                    <td>
+                        <a href="./data/backup_63f98d/150131_EhwhGs5s-3.sql">
+                            150131_EhwhGs5s-3.sql
+                        </a>
+                    </td>
+                    <td>
+                        X3.2
+                    </td>
+                    <td>
+                        2015-1-31 09:03
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        577.71 KB
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        3
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td class="td25">
+                        <input type="checkbox" onClick="checkAll('prefix', this.form, 'delete')"
+                        class="checkbox" id="chkallQW1r" name="chkall">
+                        <label for="chkallQW1r">
+                            删?
+                        </label>
+                    </td>
+                    <td colspan="15">
+                        <div class="fixsel">
+                            <input type="submit" value="提交" title="按 Enter 键可随时提交您的修改" name="deletesubmit"
+                            id="submit_deletesubmit" class="btn">
+                        </div>
+                    </td>
+                </tr>
+                <script type="text/JavaScript">
+                    _attachEvent(document.documentElement, 'keydown',
+                    function(e) {
+                        entersubmit(e, 'deletesubmit');
+                    });
+                </script>
+            </tbody>
+        </table>
+    </div>
+    
+    <script>
+		$(function(){
+			//切换备份的类型
+			$('.backuptype').delegate('li','click',function(e){
+				$(this).siblings().removeClass('checked');
+				$(this).addClass('checked');
+				$(this).siblings().find('input[type=radio]').attr('checked',false);
+				$(this).find('input[type=radio]').attr('checked',true);
+				if($(this).index()>0){
+					$('#showtables').show();
+				}else{
+					$('#showtables').hide();
+				}
+			});
+		});
+    </script>
+    
+{XT:}include file="../footer.html"{/XT}

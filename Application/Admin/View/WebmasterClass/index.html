@@ -1,0 +1,154 @@
+﻿{XT:}include file="../header.html"{/XT}
+
+    <title>
+        管理中心 - 首页
+    </title>
+</head>
+
+<body style="margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; height:100%;">
+	<div id="cpcontainer" class="container">
+        <script type="text/JavaScript">
+            parent.document.title = 'Discuz! Board 管理中心 - 站长 - 后台管理团队';
+            if (parent.$('admincpnav')) parent.$('admincpnav').innerHTML = '站长&nbsp;&raquo;&nbsp;后台管理团队&nbsp;&nbsp;<a target="main" title="添加到常用操作" href="admin.php?action=misc&operation=custommenu&do=add&title=%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E5%9B%A2%E9%98%9F&url=action%253Dfounder%2526operation%253Dperm%2526do%253Dgroup">[+]</a>';
+        </script>
+        {XT:}include file="../Webmaster/top.html"{/XT}
+        <div class="floattopempty">
+        </div>
+        <form name="cpform" method="post" autocomplete="off" action="admin.php?action=founder&amp;operation=perm&amp;do=group"id="cpform">
+            <input name="formhash" value="333ae4bf" type="hidden">
+            <input id="formscrolltop" name="scrolltop" value="" type="hidden">
+            <input name="anchor" value="" type="hidden">
+            <table class="tb tb2 ">
+                <tbody>
+                    <tr class="header">
+                        <th>
+                        </th>
+                        <th>
+                            职务名称
+                        </th>
+                        <th>
+                        </th>
+                    </tr>
+                    <tr style="height:20px" class="hover">
+                        <td class="td25">
+                            <input class="checkbox" name="delete[]" value="1" type="checkbox">
+                        </td>
+                        <td class="td24">
+                            <input class="txtnobd" onblur="this.className='txtnobd'" onfocus="this.className='txt'"size="15" name="name[1]" value="门户管理员" type="text">
+                        </td>
+                        <td>
+                            <a href="{XT:}U('Admin/WebmasterClass/Edit/?id=1'){/XT}">
+                                编辑
+                            </a>
+                        </td>
+                    </tr>
+                    <tr style="height:20px" class="hover">
+                        <td class="td25">
+                            <input class="checkbox" name="delete[]" value="2" type="checkbox">
+                        </td>
+                        <td class="td24">
+                            <input class="txtnobd" onblur="this.className='txtnobd'" onfocus="this.className='txt'"size="15" name="name[2]" value="论坛管理员" type="text">
+                        </td>
+                        <td>
+                            <a href="{XT:}U('Admin/WebmasterClass/Edit/?id=1'){/XT}">
+                                编辑
+                            </a>
+                        </td>
+                    </tr>
+                    <tr style="height:20px" class="hover">
+                        <td class="td25">
+                            <input class="checkbox" name="delete[]" value="3" type="checkbox">
+                        </td>
+                        <td class="td24">
+                            <input class="txtnobd" onblur="this.className='txtnobd'" onfocus="this.className='txt'"size="15" name="name[3]" value="群组管理员" type="text">
+                        </td>
+                        <td>
+                            <a href="{XT:}U('Admin/WebmasterClass/Edit/?id=1'){/XT}">
+                                编辑
+                            </a>
+                        </td>
+                    </tr>
+                    <tr style="height:20px" class="hover">
+                        <td class="td25">
+                            <input class="checkbox" name="delete[]" value="4" type="checkbox">
+                        </td>
+                        <td class="td24">
+                            <input class="txtnobd" onblur="this.className='txtnobd'" onfocus="this.className='txt'"size="15" name="name[4]" value="空间管理员" type="text">
+                        </td>
+                        <td>
+                            <a href="{XT:}U('Admin/WebmasterClass/Edit/?id=1'){/XT}">
+                                编辑
+                            </a>
+                        </td>
+                    </tr>
+                    <tr style="height:20px" class="hover">
+                        <td class="td25">
+                            <input class="checkbox" name="delete[]" value="5" type="checkbox">
+                        </td>
+                        <td class="td24">
+                            <input class="txtnobd" onblur="this.className='txtnobd'" onfocus="this.className='txt'"size="15" name="name[5]" value="用户管理员" type="text">
+                        </td>
+                        <td>
+                            <a href="{XT:}U('Admin/WebmasterClass/Edit/?id=1'){/XT}">
+                                编辑
+                            </a>
+                        </td>
+                    </tr>
+                    <tr style="height:20px" class="hover">
+                        <td>
+                            新增
+                        </td>
+                        <td>
+                            <input class="txt" name="newcpgroupname" type="text">
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td25">
+                            <input name="chkall" id="chkallYCoi" class="checkbox" onclick="checkAll('prefix', this.form, 'delete')"type="checkbox">
+                            <label for="chkallYCoi">
+                                删?
+                            </label>
+                        </td>
+                        <td colspan="15">
+                            <div class="fixsel">
+                                <input class="btn" id="submit_submit" name="submit" title="按 Enter 键可随时提交您的修改"value="提交" type="submit">
+                            </div>
+                        </td>
+                    </tr>
+                    <script type="text/JavaScript">
+                        _attachEvent(document.documentElement, 'keydown',
+                        function(e) {
+                            entersubmit(e, 'submit');
+                        });
+                    </script>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    
+	<script type="text/JavaScript">
+        var rowtypedata = [
+        [[1, '', 'td25'], [1, '<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<input name="newname[]" value="" size="15" type="text" class="txt">'], [1, '<input name="newurl[]" value="" size="15" type="text" class="txt">  <input type="hidden" name="newparentid[]" value="0" />'], [1, '<select name="newsubtype[]"><option value="0">内置</option><option value="1">外链</option></select>'], [1, '<input class="checkbox" type="checkbox" name="url_type" value="0" onChange="this.value=this.checked?\'0\':\'1\';">'], [1, '<input class="checkbox" type="checkbox" name="display" value="1" onChange="this.value=this.checked?\'1\':\'0\';">'], [1, '<a href="javascript:;" onclick="deleterow(this.parentNode.parentNode);" class="act">删除</a>']], 
+        [[1, '', 'td25'], [1, '<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<div class=\"board\"><input name="newname[]" value="" size="15" type="text" class="txt"></div>'], [1, '<input name="newurl[]" value="" size="15" type="text" class="txt">  <input type="hidden" name="newparentid[]" value="{1}" />'], [1, '<select name="newsubtype[]"><option value="0">内置</option><option value="1">外链</option></select>'], [1, '<input class="checkbox" type="checkbox" name="url_type" value="0" onChange="this.value=this.checked?\'0\':\'1\';">'], [1, '<input class="checkbox" type="checkbox" name="display" value="1" onChange="this.value=this.checked?\'1\':\'0\';">'], [1, '<a href="javascript:;" onclick="deleterow(this.parentNode.parentNode);" class="act">删除</a>']]];
+        function app(obj) {
+            var inputs = obj.parentNode.parentNode.getElementsByTagName('input');
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].name == 'newname[]') {
+                    inputs[i].value = obj.options[obj.options.selectedIndex].innerHTML;
+                } else if (inputs[i].name == 'newurl[]') {
+                    inputs[i].value = obj.value;
+                }
+            }
+        }
+		function checkFormNavigation(SourceForm) {
+			easyDialog.open({container : {content : '数据验证中...'}});
+			
+			easyDialog.open({container : {content : '正在保存数据...'}});
+			
+			return true;
+		}
+    </script>
+    
+{XT:}include file="../footer.html"{/XT}

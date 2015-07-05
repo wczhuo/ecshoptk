@@ -1,0 +1,295 @@
+﻿{XT:}include file="../header.html"{/XT}
+
+    <title>
+        管理中心 - 首页
+    </title>
+</head>
+
+<body style="margin: 0px" scroll="no">
+    <div id="append_parent">
+    </div>
+    <div id="ajaxwaitid">
+    </div>
+    <div class="container" id="cpcontainer">
+        <script type="text/JavaScript">
+            parent.document.title = 'Discuz! Board 管理中心 - 全局 - 站点信息';
+            if (parent.$('admincpnav')) parent.$('admincpnav').innerHTML = '全局&nbsp;&raquo;&nbsp;站点信息&nbsp;&nbsp;<a target="main" title="添加到常用操作" href="admin.php?action=misc&operation=custommenu&do=add&title=%E7%AB%99%E7%82%B9%E4%BF%A1%E6%81%AF&url=action%253Dsetting%2526operation%253Dbasic">[+]</a>';
+        </script>
+        <div class="itemtitle">
+            <h3>
+                站点信息
+            </h3>
+        </div>
+        <form name="cpform" method="post" autocomplete="off" action="admin.php?action=setting&amp;edit=yes"
+              id="cpform" enctype="multipart/form-data">
+            <input name="formhash" value="e0712c8a" type="hidden">
+            <input id="formscrolltop" name="scrolltop" value="" type="hidden">
+            <input name="anchor" value="" type="hidden">
+            <input name="operation" value="basic" type="hidden">
+            <table class="tb tb2 ">
+                <tbody>
+                    <tr onmouseover="setfaq(this, 'faqd59c')">
+                        <td colspan="2" class="td27" s="1">
+                            站点名称:
+                            <a id="faqd59c" class="faq" title="查看更多提示" href="http://faq.comsenz.com/?type=admin&amp;ver=X3.2&amp;action=setting&amp;operation=basic&amp;key=setting_basic_bbname"
+                               target="_blank" style="display: none;">
+                                &nbsp;&nbsp;&nbsp;
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="noborder" onmouseover="setfaq(this, 'faqd59c')">
+                        <td class="vtop rowform">
+                            <input name="settingnew[bbname]" value="Discuz! Board" class="txt" type="text">
+                        </td>
+                        <td class="vtop tips2" s="1">
+                            站点名称，将显示在浏览器窗口标题等位置
+                        </td>
+                    </tr>
+                    <tr onmouseover="setfaq(this, 'faq44f3')">
+                        <td colspan="2" class="td27" s="1">
+                            网站名称:
+                            <a id="faq44f3" class="faq" title="查看更多提示" href="http://faq.comsenz.com/?type=admin&amp;ver=X3.2&amp;action=setting&amp;operation=basic&amp;key=setting_basic_sitename"
+                               target="_blank" style="display: none;">
+                                &nbsp;&nbsp;&nbsp;
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="noborder" onmouseover="setfaq(this, 'faq44f3')">
+                        <td class="vtop rowform">
+                            <input name="settingnew[sitename]" value="Comsenz Inc." class="txt" type="text">
+                        </td>
+                        <td class="vtop tips2" s="1">
+                            网站名称，将显示在页面底部的联系方式处
+                        </td>
+                    </tr>
+                    <tr onmouseover="setfaq(this, 'faqe487')">
+                        <td colspan="2" class="td27" s="1">
+                            网站 URL:
+                            <a id="faqe487" class="faq" title="查看更多提示" href="http://faq.comsenz.com/?type=admin&amp;ver=X3.2&amp;action=setting&amp;operation=basic&amp;key=setting_basic_siteurl"
+                               target="_blank" style="display: none;">
+                                &nbsp;&nbsp;&nbsp;
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="noborder" onmouseover="setfaq(this, 'faqe487')">
+                        <td class="vtop rowform">
+                            <input name="settingnew[siteurl]" value="http://www.comsenz.com/" class="txt"
+                                   type="text">
+                        </td>
+                        <td class="vtop tips2" s="1">
+                            网站 URL，将作为链接显示在页面底部
+                        </td>
+                    </tr>
+                    <tr onmouseover="setfaq(this, 'faqdcb9')">
+                        <td colspan="2" class="td27" s="1">
+                            管理员邮箱:
+                            <a id="faqdcb9" class="faq" title="查看更多提示" href="http://faq.comsenz.com/?type=admin&amp;ver=X3.2&amp;action=setting&amp;operation=basic&amp;key=setting_basic_adminemail"
+                               target="_blank" style="display: none;">
+                                &nbsp;&nbsp;&nbsp;
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="noborder" onmouseover="setfaq(this, 'faqdcb9')">
+                        <td class="vtop rowform">
+                            <input name="settingnew[adminemail]" value="admin@admin.com" class="txt"
+                                   type="text">
+                        </td>
+                        <td class="vtop tips2" s="1">
+                            管理员 E-mail，将作为系统发邮件的时候的发件人地址
+                        </td>
+                    </tr>
+                    <tr onmouseover="setfaq(this, 'faqbb5c')">
+                        <td colspan="2" class="td27" s="1">
+                            QQ在线客服号码:
+                            <a id="faqbb5c" class="faq" title="查看更多提示" href="http://faq.comsenz.com/?type=admin&amp;ver=X3.2&amp;action=setting&amp;operation=basic&amp;key=setting_basic_site_qq"
+                               target="_blank" style="">
+                                &nbsp;&nbsp;&nbsp;
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="noborder" onmouseover="setfaq(this, 'faqbb5c')">
+                        <td class="vtop rowform">
+                            <input name="settingnew[site_qq]" class="txt" id="settingnew[site_qq]"
+                                   type="text">
+                        </td>
+                        <td class="vtop tips2" s="1">
+                            <a href="" onclick="this.href='http://wp.qq.com/set.html?from=discuz&amp;uin='+$('settingnew[site_qq]').value"
+                               target="_blank">
+                                设置我的QQ在线状态
+                            </a>
+                        </td>
+                    </tr>
+                    <tr onmouseover="setfaq(this, 'faq579c')">
+                        <td colspan="2" class="td27" s="1">
+                            网站备案信息代码:
+                            <a id="faq579c" class="faq" title="查看更多提示" href="http://faq.comsenz.com/?type=admin&amp;ver=X3.2&amp;action=setting&amp;operation=basic&amp;key=setting_basic_icp"
+                               target="_blank" style="display:none">
+                                &nbsp;&nbsp;&nbsp;
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="noborder" onmouseover="setfaq(this, 'faq579c')">
+                        <td class="vtop rowform">
+                            <input name="settingnew[icp]" class="txt" type="text">
+                        </td>
+                        <td class="vtop tips2" s="1">
+                            页面底部可以显示 ICP 备案信息，如果网站已备案，在此输入您的授权码，它将显示在页面底部，如果没有请留空
+                        </td>
+                    </tr>
+                    <tr onmouseover="setfaq(this, 'faqfb97')">
+                        <td colspan="2" class="td27" s="1">
+                            显示授权信息链接:
+                            <a id="faqfb97" class="faq" title="查看更多提示" href="http://faq.comsenz.com/?type=admin&amp;ver=X3.2&amp;action=setting&amp;operation=basic&amp;key=setting_basic_boardlicensed"
+                               target="_blank" style="display:none">
+                                &nbsp;&nbsp;&nbsp;
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="noborder" onmouseover="setfaq(this, 'faqfb97')">
+                        <td class="vtop rowform">
+                            <ul onmouseover="altStyle(this);">
+                                <li>
+                                    <input class="radio" name="settingnew[boardlicensed]" value="1" type="radio">
+                                    &nbsp;是
+                                </li>
+                                <li class="checked">
+                                    <input class="radio" name="settingnew[boardlicensed]" value="0" checked="checked"
+                                           type="radio">
+                                    &nbsp;否
+                                </li>
+                            </ul>
+                        </td>
+                        <td class="vtop tips2" s="1">
+                            选择"是"将在页脚显示商业授权用户链接，链接将指向 Discuz! 官方网站，用户可通过此链接验证其所使用的 Discuz! 是否经过商业授权
+                        </td>
+                    </tr>
+                    <tr onmouseover="setfaq(this, 'faq68c1')">
+                        <td colspan="2" class="td27" s="1">
+                            网站第三方统计代码:
+                            <a id="faq68c1" class="faq" title="查看更多提示" href="http://faq.comsenz.com/?type=admin&amp;ver=X3.2&amp;action=setting&amp;operation=basic&amp;key=setting_basic_stat"
+                               target="_blank" style="display:none">
+                                &nbsp;&nbsp;&nbsp;
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="noborder" onmouseover="setfaq(this, 'faq68c1')">
+                        <td class="vtop rowform">
+                            <textarea rows="6" ondblclick="textareasize(this, 1)" onkeyup="textareasize(this, 0)"
+                                      onkeydown="textareakey(this, event)" name="settingnew[statcode]" id="settingnew[statcode]"
+                                      cols="50" class="tarea"></textarea>
+                        </td>
+                        <td class="vtop tips2" s="1">
+                            页面底部可以显示第三方统计
+                            <br>
+                            双击输入框可扩大/缩小
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="tb tb2 ">
+                <tbody>
+                    <tr>
+                        <th colspan="15" class="partition">
+                            关闭站点
+                        </th>
+                    </tr>
+                    <tr onmouseover="setfaq(this, 'faq0145')">
+                        <td colspan="2" class="td27" s="1">
+                            关闭站点:
+                            <a id="faq0145" class="faq" title="查看更多提示" href="http://faq.comsenz.com/?type=admin&amp;ver=X3.2&amp;action=setting&amp;operation=basic&amp;key=setting_basic_bbclosed"
+                               target="_blank" style="display:none">
+                                &nbsp;&nbsp;&nbsp;
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="noborder" onmouseover="setfaq(this, 'faq0145')">
+                        <td class="vtop rowform">
+                            <ul onmouseover="altStyle(this);">
+                                <li>
+                                    <input class="radio" name="settingnew[bbclosed]" value="1" onclick="$('hidden_setting_basic_bbclosed').style.display = '';"
+                                           type="radio">
+                                    &nbsp;是
+                                </li>
+                                <li class="checked">
+                                    <input class="radio" name="settingnew[bbclosed]" value="0" checked="checked"
+                                           onclick="$('hidden_setting_basic_bbclosed').style.display = 'none';" type="radio">
+                                    &nbsp;否
+                                </li>
+                            </ul>
+                        </td>
+                        <td class="vtop tips2" s="1">
+                            暂时将站点关闭，其他人无法访问，但不影响管理员访问
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody class="sub" id="hidden_setting_basic_bbclosed" style="display: none">
+                    <tr onmouseover="setfaq(this, 'faqa61b')">
+                        <td colspan="2" class="td27" s="1">
+                            关闭站点的原因:
+                            <a id="faqa61b" class="faq" title="查看更多提示" href="http://faq.comsenz.com/?type=admin&amp;ver=X3.2&amp;action=setting&amp;operation=basic&amp;key=setting_basic_closedreason"
+                               target="_blank" style="display:none">
+                                &nbsp;&nbsp;&nbsp;
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="noborder" onmouseover="setfaq(this, 'faqa61b')">
+                        <td class="vtop rowform">
+                            <textarea rows="6" ondblclick="textareasize(this, 1)" onkeyup="textareasize(this, 0)"
+                                      onkeydown="textareakey(this, event)" name="settingnew[closedreason]" id="settingnew[closedreason]"
+                                      cols="50" class="tarea"></textarea>
+                        </td>
+                        <td class="vtop tips2" s="1">
+                            站点关闭时出现的提示信息
+                            <br>
+                            双击输入框可扩大/缩小
+                        </td>
+                    </tr>
+                    <tr onmouseover="setfaq(this, 'faq4a97')">
+                        <td colspan="2" class="td27" s="1">
+                            站点关闭时允许 UCenter 中的用户激活:
+                            <a id="faq4a97" class="faq" title="查看更多提示" href="http://faq.comsenz.com/?type=admin&amp;ver=X3.2&amp;action=setting&amp;operation=basic&amp;key=setting_basic_bbclosed_activation"
+                               target="_blank" style="display:none">
+                                &nbsp;&nbsp;&nbsp;
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="noborder" onmouseover="setfaq(this, 'faq4a97')">
+                        <td class="vtop rowform">
+                            <ul onmouseover="altStyle(this);">
+                                <li>
+                                    <input class="radio" name="settingnew[closedallowactivation]" value="1"
+                                           type="radio">
+                                    &nbsp;是
+                                </li>
+                                <li class="checked">
+                                    <input class="radio" name="settingnew[closedallowactivation]" value="0"
+                                           checked="checked" type="radio">
+                                    &nbsp;否
+                                </li>
+                            </ul>
+                        </td>
+                        <td class="vtop tips2" s="1"></td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td colspan="15">
+                            <div class="fixsel">
+                                <input class="btn" id="submit_settingsubmit" name="settingsubmit" title="按 Enter 键可随时提交您的修改"
+                                       value="提交" type="submit">
+                            </div>
+                        </td>
+                    </tr>
+                    <script type="text/JavaScript">
+                        _attachEvent(document.documentElement, 'keydown',
+                        function (e) {
+                            entersubmit(e, 'settingsubmit');
+                        });
+                    </script>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>

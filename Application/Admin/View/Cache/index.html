@@ -1,0 +1,146 @@
+﻿{XT:}include file="../header.html"{/XT}
+
+    <title>
+        管理中心 - 首页
+    </title>
+</head>
+
+<body style="margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; height:100%;">
+  	<div id="cpcontainer" class="container">
+        <script type="text/JavaScript">
+            parent.document.title = 'Discuz! Board 管理中心 - 界面 - 导航设置';
+            if (parent.$('admincpnav')) parent.$('admincpnav').innerHTML = '界面&nbsp;&raquo;&nbsp;导航设置&nbsp;&nbsp;<a target="main" title="添加到常用操作" href="admin.php?action=misc&operation=custommenu&do=add&title=%E5%AF%BC%E8%88%AA%E8%AE%BE%E7%BD%AE&url=action%253Dnav">[+]</a>';
+        </script>
+        {XT:}include file="./top.html"{/XT}
+        <div class="floattopempty">
+        </div>
+        <form method="post" action="{XT:}U('Admin/Navigation/Save'){/XT}" target="PostReturnIframe" id="FormNavigation" name="FormNavigation" onSubmit="return checkFormNavigation(this);">
+            <input type="hidden" name="formhash" value="1d8ec5a5">
+            <input type="hidden" id="formscrolltop" name="scrolltop" value="">
+            <input type="hidden" name="anchor" value="">
+            <table class="tb tb2 ">
+                <tbody>
+                    <tr class="header">
+                        <th>
+                        </th>
+                        <th style="width:80px;">
+                            显示顺序
+                        </th>
+                        <th>
+                            名称
+                        </th>
+                        <th>
+                            链接
+                        </th>
+                        <th>
+                            类型
+                        </th>
+                        <th>
+                            可用
+                        </th>
+                        <th>
+                        	是否显示
+                        </th>
+                        <th style="width:80px;">
+                        	操作
+                        </th>
+                    </tr>
+                </tbody>
+                <tbody id="">
+                    <tr class="hover">
+                        <td class="td25">
+                            <input type="checkbox" class="checkbox" value="" disabled="disabled">
+                        </td>
+                        <td class="td25">
+                            <input type="text" class="txt" size="2" name="displayordernew[2]" value="2">
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text" class="txt" size="15" name="namenew[2]" value="论坛">
+                                <a href="###" onClick="addrowdirect=1;addrow(this, 1, 2)" class="addchildboard">
+                                    添加二级导航
+                                </a>
+                            </div>
+                        </td>
+                        <td>
+                            <span title="forum.php">
+                                forum.php
+                                <span>
+                                </span>
+                            </span>
+                        </td>
+                        <td>
+                            内置
+                        </td>
+                        <td>
+                            <input class="checkbox" type="checkbox" name="url_type" value="0" onChange="this.value=this.checked?'0':'1';">
+                        </td>
+                        <td>
+                            <input class="checkbox" type="checkbox" name="display" value="1" onChange="this.value=this.checked?'1':'0';">
+                        </td>
+                        <td>
+                            <a href="{XT:}U('Admin/Navigation/Edit/?id=2'){/XT}" class="act">编辑</a>
+                            <a href="{XT:}U('Admin/Navigation/Delete/?id=2'){/XT}" class="act">删除</a>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td colspan="1">
+                        </td>
+                        <td colspan="8">
+                            <div>
+                                <a href="###" onClick="addrow(this, 0, 0)" class="addtr">
+                                    添加一级导航
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td25">
+                            <input type="checkbox" name="checkAll" id="checkAll" class="checkbox"onclick="checkAll('prefix', this.form, 'delete')">
+                            <label for="chkallbJjH">
+                                删?
+                            </label>
+                        </td>
+                        <td colspan="15">
+                            <div class="fixsel">
+                                <input type="submit" class="btn" id="submit_submit" name="submit" title="按 Enter 键可随时提交您的修改"value="提交">
+                            </div>
+                        </td>
+                    </tr>
+                    <script type="text/JavaScript">
+                        _attachEvent(document.documentElement, 'keydown',
+                        function(e) {
+                            entersubmit(e, 'submit');
+                        });
+                    </script>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    
+	<script type="text/JavaScript">
+        var rowtypedata = [
+        [[1, '', 'td25'], [1, '<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<input name="newname[]" value="" size="15" type="text" class="txt">'], [1, '<input name="newurl[]" value="" size="15" type="text" class="txt">  <input type="hidden" name="newparentid[]" value="0" />'], [1, '<select name="newsubtype[]"><option value="0">内置</option><option value="1">外链</option></select>'], [1, '<input class="checkbox" type="checkbox" name="url_type" value="0" onChange="this.value=this.checked?\'0\':\'1\';">'], [1, '<input class="checkbox" type="checkbox" name="display" value="1" onChange="this.value=this.checked?\'1\':\'0\';">'], [1, '<a href="javascript:;" onclick="deleterow(this.parentNode.parentNode);" class="act">删除</a>']], 
+        [[1, '', 'td25'], [1, '<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<div class=\"board\"><input name="newname[]" value="" size="15" type="text" class="txt"></div>'], [1, '<input name="newurl[]" value="" size="15" type="text" class="txt">  <input type="hidden" name="newparentid[]" value="{1}" />'], [1, '<select name="newsubtype[]"><option value="0">内置</option><option value="1">外链</option></select>'], [1, '<input class="checkbox" type="checkbox" name="url_type" value="0" onChange="this.value=this.checked?\'0\':\'1\';">'], [1, '<input class="checkbox" type="checkbox" name="display" value="1" onChange="this.value=this.checked?\'1\':\'0\';">'], [1, '<a href="javascript:;" onclick="deleterow(this.parentNode.parentNode);" class="act">删除</a>']]];
+        function app(obj) {
+            var inputs = obj.parentNode.parentNode.getElementsByTagName('input');
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].name == 'newname[]') {
+                    inputs[i].value = obj.options[obj.options.selectedIndex].innerHTML;
+                } else if (inputs[i].name == 'newurl[]') {
+                    inputs[i].value = obj.value;
+                }
+            }
+        }
+		function checkFormNavigation(SourceForm) {
+			easyDialog.open({container : {content : '数据验证中...'}});
+			
+			easyDialog.open({container : {content : '正在保存数据...'}});
+			
+			return true;
+		}
+    </script>
+    
+{XT:}include file="../footer.html"{/XT}
